@@ -1,21 +1,20 @@
 from pathlib import Path
 import json
-
+import numpy as np
+import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 
 from data_generation.csv_generator import CSV
-from data_generation.filler import DataFiller
 from data_generation.scaller import DataScaler
-
 
 LABEL_COL = "Diagnosis"
 MAPPING_DIR = Path("data/label_mappings")
 MAPPING_DIR.mkdir(parents=True, exist_ok=True)
+NEAR_ZERO_TOL = 1e-2
+ZERO_ROW_THRESHOLD = 0.60
 
 
 def _encode_labels(df, save_name: str):
-    import pandas as pd
-
     if LABEL_COL not in df.columns:
         print(f"[WARN] Kolumna '{LABEL_COL}' nie znaleziona – pomijam kodowanie etykiet.")
         return df
@@ -33,40 +32,39 @@ def _encode_labels(df, save_name: str):
     return df
 
 
+def _drop_sparse_rows(df, tol: float = NEAR_ZERO_TOL, threshold: float = ZERO_ROW_THRESHOLD):
+    num_cols = df.select_dtypes(include=[np.number]).columns.difference([LABEL_COL])
+    if not len(num_cols):
+        return df
 
-def data_generate(fill_na: str = "mean", one_hot_encoding: bool = True, scaling: str = "minmax", info: bool = False):
-    cleaner = DataFiller("data/filtered_features.csv")
+    zero_frac = (df[num_cols].abs() < tol).sum(axis=1) / len(num_cols)
+    mask_keep = zero_frac < threshold
+    removed = (~mask_keep).sum()
+    if removed:
+        print(f"[INFO] Usunięto {removed} wierszy z >= {int(threshold * 100)}% zerowych wartości.")
+    return df[mask_keep].reset_index(drop=True)
+
+
+def data_generate(input_path: str = "data/filtered_features.csv", scaling: str = "minmax"):
+    print(f"\n[START] Skalowanie: {scaling}")
     data_scaler = DataScaler()
-    print(f"Fill NA with {fill_na}, one hot encoding={one_hot_encoding}, {scaling} scaling")
 
-    if fill_na == "mean":
-        df_intermediate = cleaner.fill_na_with_mean(info=info)
-    elif fill_na == "median":
-        df_intermediate = cleaner.fill_na_with_median(info=info)
-    else:
-        df_intermediate = cleaner.fill_na_with_impute(info=info)
+    df = pd.read_csv(input_path)
 
-    CSV.save(df_intermediate, f"data/fill_na/{fill_na}.csv")
+    df = _drop_sparse_rows(df)
 
     if scaling == "minmax":
-        df_scaled = data_scaler.minmax_scaler(df_intermediate)
+        df_scaled = data_scaler.minmax_scaler(df)
     else:
-        df_scaled = data_scaler.standardize_data(df_intermediate)
+        df_scaled = data_scaler.standardize_data(df)
 
+    df_encoded = _encode_labels(df_scaled, save_name=f"clean_{scaling}")
 
-    df_encoded = _encode_labels(df_scaled, save_name=f"{fill_na}_{scaling}")
-
-
-    CSV.save(df_encoded, f"data/{fill_na}_{scaling}.csv")
+    output_path = f"data/clean_{scaling}.csv"
+    CSV.save(df_encoded, output_path)
+    print(f"[DONE] Zapisano przetworzone dane: {output_path}")
 
 
 if __name__ == "__main__":
-    # MinMax
-    data_generate(fill_na="mean", one_hot_encoding=True, scaling="minmax", info=True)
-    data_generate(fill_na="median", one_hot_encoding=True, scaling="minmax", info=True)
-    data_generate(fill_na="impute", one_hot_encoding=True, scaling="minmax", info=True)
-
-    # Standard
-    data_generate(fill_na="mean", one_hot_encoding=True, scaling="standard")
-    data_generate(fill_na="median", one_hot_encoding=True, scaling="standard")
-    data_generate(fill_na="impute", one_hot_encoding=True, scaling="standard")
+    data_generate(scaling="minmax")
+    data_generate(scaling="standard")
