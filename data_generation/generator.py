@@ -4,7 +4,7 @@ from data_generation.scaller import DataScaler
 
 
 def data_generate(fill_na="mean", one_hot_encoding=True, scaling="minmax", info=False):
-    cleaner = DataFiller("../ready_dataset_to_preprocessing.csv")
+    cleaner = DataFiller("data/filtered_features.csv")
     data_scaler = DataScaler()
     print(f"Fill NA with {fill_na}, one hot encoding={one_hot_encoding}, {scaling} scaling")
 
