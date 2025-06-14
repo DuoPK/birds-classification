@@ -6,12 +6,12 @@ from utils.config import XGBOOST_PARAMS, CATBOOST_PARAMS, MODEL_WITHOUT_N_JOBS_P
 
 class DatasetType(Enum):
     """Enum for available datasets"""
-    # MEAN_MINMAX = "mean_minmax.csv"
+    MEAN_MINMAX = "mean_minmax.csv"
     # MEDIAN_MINMAX = "median_minmax.csv"
     # MEDIAN_STANDARD = "median_standard.csv"
-
+    #
     # IMPUTE_MINMAX = "impute_minmax.csv"
-    FILTERED_FEATURES = "filtered_features.csv"
+    # MEAN_STANDARD = "mean_standard.csv"
     # IMPUTE_STANDARD = "impute_standard.csv"
     
     @classmethod
@@ -22,7 +22,7 @@ class DatasetType(Enum):
     @classmethod
     def get_dataset_path(cls, dataset_type: 'DatasetType') -> str:
         """Get a full path to the dataset"""
-        return f"../data_generation/data/{dataset_type.value}"
+        return f"data_generation/data/{dataset_type.value}"
     
     @classmethod
     def get_dataset_name(cls, dataset_type: 'DatasetType') -> str:

@@ -25,7 +25,7 @@ from utils.config import (
 )
 
 # Import all models
-from models.CatBoostModel import CatBoostModel
+# from models.CatBoostModel import CatBoostModel
 from models.XGBoostModel import XGBoostModel
 from scipy import linalg
 
@@ -34,7 +34,7 @@ datetime_dir_name = datetime.now().strftime('%Y%m%d_%H%M%S')
 
 # Model mapping
 MODEL_CLASSES = {
-    ModelType.CATBOOST: CatBoostModel,
+    # ModelType.CATBOOST: CatBoostModel,
     ModelType.XGBOOST: XGBoostModel,
     ModelType.RANDOM_FOREST: RandomForestModel,
     ModelType.SVM: SVCModel,
@@ -64,7 +64,9 @@ def setup_logging(dataset_name, model_name):
 
 def load_dataset(file_path):
     df = pd.read_csv(file_path)
-    X = df.drop('Diagnosis', axis=1).values
+    df = df.drop(columns=["Segment", "SourceFile"])
+
+    X = df.drop(columns=["Diagnosis"]).values
     y = df['Diagnosis'].values
     feature_names = df.drop('Diagnosis', axis=1).columns.tolist()
     return X, y, feature_names
