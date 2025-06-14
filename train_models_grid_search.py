@@ -8,15 +8,24 @@ import logging
 from datetime import datetime
 from sklearn.feature_selection import SelectKBest, f_classif
 
-from training.models.VotingModel import VotingModel
-from training.utils.ClassificationMetrics import ClassificationMetrics
-from training.utils.StratifiedTrainTestSplitter import StratifiedTrainTestSplitter
-from training.hyperparams_search.grid_search import GridSearch
-from training.utils.enums import DatasetType, ModelType
-from training.utils.config import (
+from models.CatBoostModel import CatBoostModel
+from models.VotingModel import VotingModel
+from models.XGBoostModel import XGBoostModel
+from utils.ClassificationMetrics import ClassificationMetrics
+from utils.StratifiedTrainTestSplitter import StratifiedTrainTestSplitter
+from hyperparams_search.grid_search import GridSearch
+from utils.enums import DatasetType, ModelType
+from utils.config import (
     RANDOM_STATE, CV, TEST_SIZE, SELECT_KBEST,
     K_BEST, set_random_state, MAX_GRID_SEARCH_COMBINATIONS
 )
+from models.GaussianNBModel import GaussianNBModel
+from models.LogisticRegressionModel import LogisticRegressionModel
+from models.QuadraticDiscriminantAnalysisModel import QuadraticDiscriminantAnalysisModel
+from models.RandomForestModel import RandomForestModel
+from models.SVCModel import SVCModel
+from models.StackingModel import StackingModel
+from models.VotingModel import VotingModel
 from scipy import linalg
 
 warnings.filterwarnings("ignore", category=linalg.LinAlgWarning)
@@ -24,15 +33,15 @@ datetime_dir_name = datetime.now().strftime('%Y%m%d_%H%M%S')
 
 # Model mapping
 MODEL_CLASSES = {
-    # ModelType.SVM: SVCModel,
-    # ModelType.CATBOOST: CatBoostModel,
-    # ModelType.XGBOOST: XGBoostModel,
-    # ModelType.RANDOM_FOREST: RandomForestModel,
-    # ModelType.LOGISTIC_REGRESSION: LogisticRegressionModel,
-    # ModelType.GAUSSIAN_NB: GaussianNBModel,
-    # ModelType.QDA: QuadraticDiscriminantAnalysisModel,
+    ModelType.SVM: SVCModel,
+    ModelType.CATBOOST: CatBoostModel,
+    ModelType.XGBOOST: XGBoostModel,
+    ModelType.RANDOM_FOREST: RandomForestModel,
+    ModelType.LOGISTIC_REGRESSION: LogisticRegressionModel,
+    ModelType.GAUSSIAN_NB: GaussianNBModel,
+    ModelType.QDA: QuadraticDiscriminantAnalysisModel,
     ModelType.VOTING: VotingModel,
-    # ModelType.STACKING: StackingModel
+    ModelType.STACKING: StackingModel
 }
 
 

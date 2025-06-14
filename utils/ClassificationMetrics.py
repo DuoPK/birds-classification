@@ -1,40 +1,24 @@
 import numpy as np
+from sklearn.metrics import confusion_matrix, accuracy_score, f1_score
 
 class ClassificationMetrics:
-    def __init__(self, y_true, y_pred, positive_label=1):
+    def __init__(self, y_true, y_pred):
         self.y_true = np.array(y_true)
         self.y_pred = np.array(y_pred)
-        self.positive_label = positive_label
+        self.labels = np.array([0, 1, 2, 3])
         self._compute_confusion()
 
     def _compute_confusion(self):
-        self.TP = np.sum((self.y_pred == self.positive_label) & (self.y_true == self.positive_label))
-        self.FP = np.sum((self.y_pred == self.positive_label) & (self.y_true != self.positive_label))
-        self.FN = np.sum((self.y_pred != self.positive_label) & (self.y_true == self.positive_label))
-        self.TN = np.sum((self.y_pred != self.positive_label) & (self.y_true != self.positive_label))
+        self.cm = confusion_matrix(self.y_true, self.y_pred, labels=self.labels)
 
     def confusion_matrix(self):
-        """
-        Returns the confusion matrix as a 2x2 numpy array:
-        [[TN, FP],
-         [FN, TP]]
-        """
-        return np.array([[self.TN, self.FP],
-                        [self.FN, self.TP]])
+        return self.cm
 
     def accuracy(self):
-        """
-        Accuracy: (TP + TN)
-        """
-        total = self.TP + self.TN + self.FP + self.FN
-        return (self.TP + self.TN) / total if total != 0 else 0.0
+        return accuracy_score(self.y_true, self.y_pred)
 
     def f1_score(self):
-        """
-        F1 = 2 * TP / (2TP + FP + FN)
-        """
-        denom = 2 * self.TP + self.FP + self.FN
-        return (2 * self.TP) / denom if denom != 0 else 0.0
+        return f1_score(self.y_true, self.y_pred, average='weighted', labels=self.labels)
 
     def summary(self):
         return {
