@@ -1,2 +1,0 @@
-timestamp,dataset,model,custom_cv_mean_accuracy,custom_cv_mean_f1_score,custom_cv_std_accuracy,custom_cv_std_f1_score,custom_cv_training_time,sklearn_cv_mean_accuracy,sklearn_cv_mean_f1_score,sklearn_cv_std_accuracy,sklearn_cv_std_f1_score,sklearn_cv_training_time
-2025-06-15 01:28:20,filtered_features,RandomForestModel,0.8298112674065173,0.8270058332924048,0.007645455221927644,0.00736782126792024,12.489556074142456,0.8303393213572855,0.8276462906291421,0.0050670479746266735,0.0053570192453161755,12.510088205337524

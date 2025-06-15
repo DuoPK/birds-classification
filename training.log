@@ -40,3 +40,113 @@ ValueError: Invalid classes inferred from unique values of `y`.  Expected: [0 1 
 2025-06-15 01:51:56,081 - INFO - Loaded dataset with 7515 samples and 52 features
 2025-06-15 01:51:56,098 - INFO - Split data into 635 training files and 159 test files
 2025-06-15 01:52:58,124 - ERROR - Error during model training: multi_class must be in ('ovo', 'ovr')
+2025-06-15 08:12:14,313 - INFO - Starting training for RandomForestModel on filtered_features.csv
+2025-06-15 08:12:14,371 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 08:12:14,381 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 08:18:54,821 - ERROR - Error during model training: join() argument must be str, bytes, or os.PathLike object, not 'DatasetType'
+2025-06-15 08:32:14,988 - INFO - Starting training for SVCModel on filtered_features.csv
+2025-06-15 08:32:15,039 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 08:32:15,045 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 08:32:49,273 - ERROR - Error during model training: join() argument must be str, bytes, or os.PathLike object, not 'DatasetType'
+2025-06-15 08:35:35,609 - INFO - Starting training for SVCModel on filtered_features.csv
+2025-06-15 08:35:35,673 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 08:35:35,686 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 08:36:03,229 - ERROR - Error during model training: join() argument must be str, bytes, or os.PathLike object, not 'DatasetType'
+2025-06-15 08:36:38,215 - INFO - Starting training for SVCModel on filtered_features.csv
+2025-06-15 08:36:38,275 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 08:36:38,288 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 08:38:32,475 - ERROR - Error during model training: join() argument must be str, bytes, or os.PathLike object, not 'DatasetType'
+2025-06-15 08:39:04,836 - INFO - Starting training for SVCModel on filtered_features.csv
+2025-06-15 08:39:04,895 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 08:39:04,902 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 08:39:18,392 - INFO - Training completed for SVCModel
+2025-06-15 08:39:18,392 - INFO - Best parameters: {'C': 3.013580248260125, 'kernel': 'rbf', 'gamma': 'scale', 'class_weight': None}
+2025-06-15 08:39:18,392 - INFO - Test metrics: {'accuracy': 0.795959595959596, 'f1': 0.7940623103060468, 'precision': 0.7980761454158088, 'recall': 0.795959595959596, 'roc_auc': 0.9054897786522239, 'confusion_matrix': array([[127,  49,  41],
+       [ 11, 392,  83],
+       [ 22,  97, 663]])}
+2025-06-15 08:39:18,392 - INFO - Model saved to: models/saved\SVCModel_filtered_features.joblib
+2025-06-15 08:39:18,392 - INFO - Results saved to: results\SVCModel_filtered_features_results.csv
+2025-06-15 08:46:48,719 - INFO - Starting training for SVCModel on filtered_features.csv
+2025-06-15 08:46:48,769 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 08:46:48,775 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 08:47:00,941 - ERROR - Error during model training: DatasetType.get_dataset_name() missing 1 required positional argument: 'dataset_type'
+2025-06-15 08:47:37,500 - INFO - Starting training for SVCModel on filtered_features.csv
+2025-06-15 08:47:37,553 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 08:47:37,559 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 08:47:48,997 - INFO - Training completed for SVCModel
+2025-06-15 08:47:48,997 - INFO - Best parameters: {'C': 3.013580248260125, 'kernel': 'rbf', 'gamma': 'scale', 'class_weight': None}
+2025-06-15 08:47:48,997 - INFO - Test metrics: {'accuracy': 0.795959595959596, 'f1': 0.7940623103060468, 'precision': 0.7980761454158088, 'recall': 0.795959595959596, 'roc_auc': 0.9054897786522239, 'confusion_matrix': array([[127,  49,  41],
+       [ 11, 392,  83],
+       [ 22,  97, 663]])}
+2025-06-15 08:47:48,997 - INFO - Model saved to: models/saved\SVCModel_filtered_features.joblib
+2025-06-15 08:47:48,997 - INFO - Results saved to: results\SVCModel_filtered_features_results.csv
+2025-06-15 08:50:45,406 - INFO - Starting training for RandomForestModel on filtered_features.csv
+2025-06-15 08:50:45,456 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 08:50:45,463 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 08:57:13,782 - INFO - Obrazek macierzy pomyłek zapisany: results\RandomForestModel_filtered_features_confusion_matrix.png
+2025-06-15 08:57:13,880 - INFO - Training completed for RandomForestModel
+2025-06-15 08:57:13,881 - INFO - Best parameters: {'n_estimators': 500, 'max_depth': 16, 'min_samples_split': 10, 'min_samples_leaf': 1, 'max_features': None, 'bootstrap': True, 'criterion': 'entropy'}
+2025-06-15 08:57:13,881 - INFO - Test metrics: {'accuracy': 0.7616161616161616, 'f1': 0.7594222869578121, 'precision': 0.7602747188809119, 'recall': 0.7616161616161616, 'roc_auc': 0.8983665483385692, 'confusion_matrix': array([[119,  52,  46],
+       [  6, 373, 107],
+       [ 47,  96, 639]])}
+2025-06-15 08:57:13,881 - INFO - Model saved to: models/saved\RandomForestModel_filtered_features.joblib
+2025-06-15 08:57:13,881 - INFO - Results saved to: results\RandomForestModel_filtered_features_results.csv
+2025-06-15 09:00:51,533 - INFO - Starting training for XGBoostModel on filtered_features.csv
+2025-06-15 09:00:51,591 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 09:00:51,599 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 09:01:00,756 - INFO - Obrazek macierzy pomyłek zapisany: results\XGBoostModel_filtered_features_confusion_matrix.png
+2025-06-15 09:01:00,776 - INFO - Training completed for XGBoostModel
+2025-06-15 09:01:00,776 - INFO - Best parameters: {'n_estimators': 400, 'max_depth': 6, 'learning_rate': 0.030315709166063964, 'subsample': 0.7125456746939529, 'colsample_bytree': 0.832557191156439, 'min_child_weight': 6, 'gamma': 0.6709383902464033, 'reg_alpha': 6.645768779625113, 'reg_lambda': 0.20351714709008842}
+2025-06-15 09:01:00,777 - INFO - Test metrics: {'accuracy': 0.775084175084175, 'f1': 0.7731333195250721, 'precision': 0.7743996490488624, 'recall': 0.775084175084175, 'roc_auc': 0.9107946315059787, 'confusion_matrix': array([[126,  47,  44],
+       [  8, 374, 104],
+       [ 37,  94, 651]])}
+2025-06-15 09:01:00,777 - INFO - Model saved to: models/saved\XGBoostModel_filtered_features.joblib
+2025-06-15 09:01:00,777 - INFO - Results saved to: results\XGBoostModel_filtered_features_results.csv
+2025-06-15 09:01:34,894 - INFO - Starting training for XGBoostModel on filtered_features.csv
+2025-06-15 09:01:34,958 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 09:01:34,965 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 09:01:34,973 - INFO - Selected 10 best features: ['mfcc_4_mean', 'mfcc_7_std', 'mfcc_8_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_6_min', 'mfcc_9_min', 'mfcc_4_max', 'mfcc_7_max', 'mfcc_8_max']
+2025-06-15 09:01:41,611 - INFO - Obrazek macierzy pomyłek zapisany: results\XGBoostModel_filtered_features_kbest-10_confusion_matrix.png
+2025-06-15 09:01:41,629 - INFO - Training completed for XGBoostModel
+2025-06-15 09:01:41,629 - INFO - Best parameters: {'n_estimators': 400, 'max_depth': 6, 'learning_rate': 0.05100596170578151, 'subsample': 0.6019660974760671, 'colsample_bytree': 0.8833188429662421, 'min_child_weight': 3, 'gamma': 0.5426524236852709, 'reg_alpha': 5.944344549315328, 'reg_lambda': 3.7641820005438738}
+2025-06-15 09:01:41,630 - INFO - Test metrics: {'accuracy': 0.7333333333333333, 'f1': 0.7315000979977762, 'precision': 0.7314066270244732, 'recall': 0.7333333333333333, 'roc_auc': 0.8851724055762894, 'confusion_matrix': array([[106,  61,  50],
+       [ 19, 363, 104],
+       [ 60, 102, 620]])}
+2025-06-15 09:01:41,630 - INFO - Model saved to: models/saved\XGBoostModel_filtered_features_kbest-10.joblib
+2025-06-15 09:01:41,630 - INFO - Results saved to: results\XGBoostModel_filtered_features_kbest-10_results.csv
+2025-06-15 09:02:16,629 - INFO - Starting training for XGBoostModel on filtered_features.csv
+2025-06-15 09:02:16,685 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 09:02:16,692 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 09:02:16,698 - INFO - Selected 10 best features: ['mfcc_4_mean', 'mfcc_7_std', 'mfcc_8_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_6_min', 'mfcc_9_min', 'mfcc_4_max', 'mfcc_7_max', 'mfcc_8_max']
+2025-06-15 09:02:30,941 - INFO - Obrazek macierzy pomyłek zapisany: results\XGBoostModel_filtered_features_kbest-10_confusion_matrix.png
+2025-06-15 09:02:30,966 - INFO - Training completed for XGBoostModel
+2025-06-15 09:02:30,967 - INFO - Best parameters: {'n_estimators': 500, 'max_depth': 7, 'learning_rate': 0.010200576134928545, 'subsample': 0.6084714477225549, 'colsample_bytree': 0.7179709916291315, 'min_child_weight': 6, 'gamma': 1.3511252003383016, 'reg_alpha': 1.8694675141785722, 'reg_lambda': 0.0013301737114044768}
+2025-06-15 09:02:30,967 - INFO - Test metrics: {'accuracy': 0.7326599326599327, 'f1': 0.7300287666836032, 'precision': 0.7302188134872022, 'recall': 0.7326599326599327, 'roc_auc': 0.8830568958163181, 'confusion_matrix': array([[102,  64,  51],
+       [ 15, 366, 105],
+       [ 58, 104, 620]])}
+2025-06-15 09:02:30,967 - INFO - Model saved to: models/saved\XGBoostModel_filtered_features_kbest-10.joblib
+2025-06-15 09:02:30,967 - INFO - Results saved to: results\XGBoostModel_filtered_features_kbest-10_results.csv
+2025-06-15 09:03:01,556 - INFO - Starting training for SVCModel on filtered_features.csv
+2025-06-15 09:03:01,605 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 09:03:01,611 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 09:03:01,617 - INFO - Selected 10 best features: ['mfcc_4_mean', 'mfcc_7_std', 'mfcc_8_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_6_min', 'mfcc_9_min', 'mfcc_4_max', 'mfcc_7_max', 'mfcc_8_max']
+2025-06-15 09:04:08,985 - INFO - Obrazek macierzy pomyłek zapisany: results\SVCModel_filtered_features_kbest-10_confusion_matrix.png
+2025-06-15 09:04:08,987 - INFO - Training completed for SVCModel
+2025-06-15 09:04:08,987 - INFO - Best parameters: {'C': 0.015218538809517478, 'kernel': 'sigmoid', 'gamma': 'scale', 'class_weight': 'balanced'}
+2025-06-15 09:04:08,987 - INFO - Test metrics: {'accuracy': 0.7205387205387206, 'f1': 0.727463764648468, 'precision': 0.7595637102855316, 'recall': 0.7205387205387206, 'roc_auc': 0.8637334012457766, 'confusion_matrix': array([[142,  57,  18],
+       [ 45, 398,  43],
+       [104, 148, 530]])}
+2025-06-15 09:04:08,987 - INFO - Model saved to: models/saved\SVCModel_filtered_features_kbest-10.joblib
+2025-06-15 09:04:08,987 - INFO - Results saved to: results\SVCModel_filtered_features_kbest-10_results.csv
+2025-06-15 09:04:47,058 - INFO - Starting training for RandomForestModel on filtered_features.csv
+2025-06-15 09:04:47,107 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 09:04:47,113 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 09:04:47,119 - INFO - Selected 10 best features: ['mfcc_4_mean', 'mfcc_7_std', 'mfcc_8_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_6_min', 'mfcc_9_min', 'mfcc_4_max', 'mfcc_7_max', 'mfcc_8_max']
+2025-06-15 09:06:31,638 - INFO - Obrazek macierzy pomyłek zapisany: results\RandomForestModel_filtered_features_kbest-10_confusion_matrix.png
+2025-06-15 09:06:31,750 - INFO - Training completed for RandomForestModel
+2025-06-15 09:06:31,751 - INFO - Best parameters: {'n_estimators': 300, 'max_depth': 10, 'min_samples_split': 6, 'min_samples_leaf': 3, 'max_features': 'sqrt', 'bootstrap': True, 'criterion': 'gini'}
+2025-06-15 09:06:31,751 - INFO - Test metrics: {'accuracy': 0.731986531986532, 'f1': 0.7293085772039587, 'precision': 0.7291264652500248, 'recall': 0.731986531986532, 'roc_auc': 0.881717787516854, 'confusion_matrix': array([[103,  62,  52],
+       [ 11, 365, 110],
+       [ 62, 101, 619]])}
+2025-06-15 09:06:31,751 - INFO - Model saved to: models/saved\RandomForestModel_filtered_features_kbest-10.joblib
+2025-06-15 09:06:31,751 - INFO - Results saved to: results\RandomForestModel_filtered_features_kbest-10_results.csv
