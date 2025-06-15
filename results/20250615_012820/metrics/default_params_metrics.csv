@@ -1,0 +1,2 @@
+timestamp,dataset,model,custom_cv_mean_accuracy,custom_cv_mean_f1_score,custom_cv_std_accuracy,custom_cv_std_f1_score,custom_cv_training_time,sklearn_cv_mean_accuracy,sklearn_cv_mean_f1_score,sklearn_cv_std_accuracy,sklearn_cv_std_f1_score,sklearn_cv_training_time
+2025-06-15 01:28:50,filtered_features,SVCModel,0.8613438799161968,0.8607884710383956,0.002477347334018941,0.0023827823307720052,14.10883355140686,0.8622754491017964,0.861671308738185,0.011562306850953271,0.011617368890216114,16.268491506576538

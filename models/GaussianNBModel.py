@@ -1,5 +1,6 @@
 from sklearn.naive_bayes import GaussianNB
 import numpy as np
+from utils.config import RANDOM_STATE
 
 class GaussianNBModel:
     def __init__(self, **kwargs):
@@ -43,4 +44,21 @@ class GaussianNBModel:
         Returns:
             numpy.ndarray: Probability estimates
         """
-        return self.model.predict_proba(X) 
+        return self.model.predict_proba(X)
+
+    def get_params(self):
+        return self.model.get_params()
+
+    def get_optuna_params(self, trial):
+        """Get hyperparameters for Optuna optimization"""
+        return {
+            'var_smoothing': trial.suggest_float('var_smoothing', 1e-9, 1e-5, log=True)
+        }
+
+    def get_model_instance(self, params):
+        """Create a new model instance with given parameters"""
+        return GaussianNB(**params)
+
+    def get_params_from_optuna_params(self, optuna_params):
+        """Convert Optuna parameters to model parameters"""
+        return optuna_params 

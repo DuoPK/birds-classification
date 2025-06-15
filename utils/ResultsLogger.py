@@ -18,19 +18,26 @@ class ResultsLogger:
         os.makedirs(self.results_dir, exist_ok=True)
         os.makedirs(self.plots_dir, exist_ok=True)
 
+        # Define columns for metrics DataFrame
+        self.columns = [
+            'timestamp', 'dataset', 'model',
+            'custom_cv_mean_accuracy', 'custom_cv_mean_f1_score',
+            'custom_cv_std_accuracy', 'custom_cv_std_f1_score',
+            'custom_cv_training_time',
+            'sklearn_cv_mean_accuracy', 'sklearn_cv_mean_f1_score',
+            'sklearn_cv_std_accuracy', 'sklearn_cv_std_f1_score',
+            'sklearn_cv_training_time'
+        ]
+
         # Load or create metrics DataFrame
         if os.path.exists(self.metrics_file):
             self.metrics_df = pd.read_csv(self.metrics_file)
+            # Ensure all required columns exist
+            for col in self.columns:
+                if col not in self.metrics_df.columns:
+                    self.metrics_df[col] = None
         else:
-            self.metrics_df = pd.DataFrame(columns=[
-                'timestamp', 'dataset', 'model',
-                'custom_cv_mean_accuracy', 'custom_cv_mean_f1_score',
-                'custom_cv_std_accuracy', 'custom_cv_std_f1_score',
-                'custom_cv_training_time',
-                'sklearn_cv_mean_accuracy', 'sklearn_cv_mean_f1_score',
-                'sklearn_cv_std_accuracy', 'sklearn_cv_std_f1_score',
-                'sklearn_cv_training_time'
-            ])
+            self.metrics_df = pd.DataFrame(columns=self.columns)
 
         self.font_title_size = 20
         self.font_label_size = 18
@@ -42,28 +49,35 @@ class ResultsLogger:
         """Log results for default parameters"""
         timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
-        new_row = {
+        new_row = pd.DataFrame([{
             'timestamp': timestamp,
             'dataset': dataset_name,
             'model': model_name,
-            'custom_cv_mean_accuracy': custom_cv_results['mean_accuracy'],
-            'custom_cv_mean_f1_score': custom_cv_results['mean_f1_score'],
-            'custom_cv_std_accuracy': custom_cv_results['std_accuracy'],
-            'custom_cv_std_f1_score': custom_cv_results['std_f1_score'],
-            'custom_cv_training_time': custom_cv_results['training_time'],
-            'sklearn_cv_mean_accuracy': sklearn_cv_results['mean_accuracy'],
-            'sklearn_cv_mean_f1_score': sklearn_cv_results['mean_f1_score'],
-            'sklearn_cv_std_accuracy': sklearn_cv_results['std_accuracy'],
-            'sklearn_cv_std_f1_score': sklearn_cv_results['std_f1_score'],
-            'sklearn_cv_training_time': sklearn_cv_results['training_time']
-        }
+            'custom_cv_mean_accuracy': custom_cv_results.get('mean_accuracy'),
+            'custom_cv_mean_f1_score': custom_cv_results.get('mean_f1_score'),
+            'custom_cv_std_accuracy': custom_cv_results.get('std_accuracy'),
+            'custom_cv_std_f1_score': custom_cv_results.get('std_f1_score'),
+            'custom_cv_training_time': custom_cv_results.get('training_time'),
+            'sklearn_cv_mean_accuracy': sklearn_cv_results.get('mean_accuracy'),
+            'sklearn_cv_mean_f1_score': sklearn_cv_results.get('mean_f1_score'),
+            'sklearn_cv_std_accuracy': sklearn_cv_results.get('std_accuracy'),
+            'sklearn_cv_std_f1_score': sklearn_cv_results.get('std_f1_score'),
+            'sklearn_cv_training_time': sklearn_cv_results.get('training_time')
+        }])
 
-        self.metrics_df = pd.concat([self.metrics_df, pd.DataFrame([new_row])], ignore_index=True)
+        # Ensure all columns exist in new_row
+        for col in self.columns:
+            if col not in new_row.columns:
+                new_row[col] = None
+
+        # Concatenate with existing DataFrame
+        self.metrics_df = pd.concat([self.metrics_df, new_row], ignore_index=True)
         self.metrics_df.to_csv(self.metrics_file, index=False)
 
     def save_confusion_matrix(self, y_true, y_pred, dataset_name, model_name):
         metrics = ClassificationMetrics(y_true, y_pred)
         cm = metrics.confusion_matrix()
+        labels = metrics.labels
 
         plt.figure(figsize=(10, 8))
         sns.heatmap(
@@ -71,7 +85,9 @@ class ResultsLogger:
             annot=True,
             fmt='d',
             cmap='Blues',
-            annot_kws={'size': self.font_annot_size}
+            annot_kws={'size': self.font_annot_size},
+            xticklabels=labels,
+            yticklabels=labels
         )
         plt.title(f'Confusion Matrix - {model_name} on {dataset_name}', fontsize=self.font_title_size)
         plt.ylabel('True Label', fontsize=self.font_label_size)
@@ -85,17 +101,21 @@ class ResultsLogger:
         plt.close()
 
     def save_roc_curve(self, y_true, y_pred_proba, dataset_name, model_name):
-        fpr, tpr, _ = roc_curve(y_true, y_pred_proba[:, 1])
-        roc_auc = auc(fpr, tpr)
-
+        # For multiclass, we'll create a one-vs-rest ROC curve for each class
+        n_classes = y_pred_proba.shape[1]
         plt.figure(figsize=(10, 8))
-        plt.plot(fpr, tpr, color='darkorange', lw=2, label=f'ROC curve (AUC = {roc_auc:.2f})')
+        
+        for i in range(n_classes):
+            fpr, tpr, _ = roc_curve(y_true == i, y_pred_proba[:, i])
+            roc_auc = auc(fpr, tpr)
+            plt.plot(fpr, tpr, lw=2, label=f'Class {i} (AUC = {roc_auc:.2f})')
+        
         plt.plot([0, 1], [0, 1], color='navy', lw=2, linestyle='--')
         plt.xlim([0.0, 1.0])
         plt.ylim([0.0, 1.05])
         plt.xlabel('False Positive Rate', fontsize=self.font_label_size)
         plt.ylabel('True Positive Rate', fontsize=self.font_label_size)
-        plt.title(f'ROC Curve - {model_name} on {dataset_name}', fontsize=self.font_title_size)
+        plt.title(f'ROC Curves - {model_name} on {dataset_name}', fontsize=self.font_title_size)
         plt.legend(loc="lower right", fontsize=self.font_legend_size)
         plt.xticks(fontsize=self.font_tick_size)
         plt.yticks(fontsize=self.font_tick_size)

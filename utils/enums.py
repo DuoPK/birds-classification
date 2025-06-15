@@ -7,6 +7,7 @@ from utils.config import XGBOOST_PARAMS, CATBOOST_PARAMS, MODEL_WITHOUT_N_JOBS_P
 class DatasetType(Enum):
     """Enum for available datasets"""
     MEAN_MINMAX = "mean_minmax.csv"
+    MY_AUDIO = "filtered_features.csv"
     # MEDIAN_MINMAX = "median_minmax.csv"
     # MEDIAN_STANDARD = "median_standard.csv"
     #

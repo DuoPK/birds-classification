@@ -1,0 +1,5 @@
+2025-06-15 00:32:39,375 - INFO - Loading input CSV: filtered_features.csv
+2025-06-15 00:32:39,800 - INFO - Loaded 7471 samples with 429 features
+2025-06-15 00:32:39,800 - INFO - Aggregating MFCC features per segment
+2025-06-15 00:32:39,800 - INFO - Found 429 feature columns
+2025-06-15 00:32:39,800 - INFO - Grouping by: ['Diagnosis', 'Segment', 'SourceFile']

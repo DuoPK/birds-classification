@@ -1,0 +1,24 @@
+2025-06-15 01:26:52,867 - INFO - Starting training for RandomForestModel on filtered_features
+2025-06-15 01:26:52,917 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 01:26:52,917 - INFO - Feature columns: ['mfcc_0_mean', 'mfcc_1_mean', 'mfcc_2_mean', 'mfcc_3_mean', 'mfcc_4_mean', 'mfcc_5_mean', 'mfcc_6_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_9_mean', 'mfcc_10_mean', 'mfcc_11_mean', 'mfcc_12_mean', 'mfcc_0_std', 'mfcc_1_std', 'mfcc_2_std', 'mfcc_3_std', 'mfcc_4_std', 'mfcc_5_std', 'mfcc_6_std', 'mfcc_7_std', 'mfcc_8_std', 'mfcc_9_std', 'mfcc_10_std', 'mfcc_11_std', 'mfcc_12_std', 'mfcc_0_min', 'mfcc_1_min', 'mfcc_2_min', 'mfcc_3_min', 'mfcc_4_min', 'mfcc_5_min', 'mfcc_6_min', 'mfcc_7_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_10_min', 'mfcc_11_min', 'mfcc_12_min', 'mfcc_0_max', 'mfcc_1_max', 'mfcc_2_max', 'mfcc_3_max', 'mfcc_4_max', 'mfcc_5_max', 'mfcc_6_max', 'mfcc_7_max', 'mfcc_8_max', 'mfcc_9_max', 'mfcc_10_max', 'mfcc_11_max', 'mfcc_12_max']
+2025-06-15 01:26:52,917 - INFO - Classes: ['calqua' 'comwax' 'houfin']
+2025-06-15 01:26:52,917 - INFO - Number of unique source files: 794
+2025-06-15 01:26:52,917 - INFO - Starting hyperparameter search with Optuna
+2025-06-15 01:26:55,797 - ERROR - Error during model training: Target is multiclass but average='binary'. Please choose another average setting, one of [None, 'micro', 'macro', 'weighted'].
+2025-06-15 01:26:55,797 - ERROR - Error training ModelType.RANDOM_FOREST on DatasetType.MY_AUDIO: Target is multiclass but average='binary'. Please choose another average setting, one of [None, 'micro', 'macro', 'weighted'].
+2025-06-15 01:26:55,798 - INFO - Starting training for SVCModel on filtered_features
+2025-06-15 01:26:55,849 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 01:26:55,849 - INFO - Feature columns: ['mfcc_0_mean', 'mfcc_1_mean', 'mfcc_2_mean', 'mfcc_3_mean', 'mfcc_4_mean', 'mfcc_5_mean', 'mfcc_6_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_9_mean', 'mfcc_10_mean', 'mfcc_11_mean', 'mfcc_12_mean', 'mfcc_0_std', 'mfcc_1_std', 'mfcc_2_std', 'mfcc_3_std', 'mfcc_4_std', 'mfcc_5_std', 'mfcc_6_std', 'mfcc_7_std', 'mfcc_8_std', 'mfcc_9_std', 'mfcc_10_std', 'mfcc_11_std', 'mfcc_12_std', 'mfcc_0_min', 'mfcc_1_min', 'mfcc_2_min', 'mfcc_3_min', 'mfcc_4_min', 'mfcc_5_min', 'mfcc_6_min', 'mfcc_7_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_10_min', 'mfcc_11_min', 'mfcc_12_min', 'mfcc_0_max', 'mfcc_1_max', 'mfcc_2_max', 'mfcc_3_max', 'mfcc_4_max', 'mfcc_5_max', 'mfcc_6_max', 'mfcc_7_max', 'mfcc_8_max', 'mfcc_9_max', 'mfcc_10_max', 'mfcc_11_max', 'mfcc_12_max']
+2025-06-15 01:26:55,849 - INFO - Classes: ['calqua' 'comwax' 'houfin']
+2025-06-15 01:26:55,850 - INFO - Number of unique source files: 794
+2025-06-15 01:26:55,850 - INFO - Starting hyperparameter search with Optuna
+2025-06-15 01:26:58,733 - ERROR - Error during model training: Target is multiclass but average='binary'. Please choose another average setting, one of [None, 'micro', 'macro', 'weighted'].
+2025-06-15 01:26:58,733 - ERROR - Error training ModelType.SVM on DatasetType.MY_AUDIO: Target is multiclass but average='binary'. Please choose another average setting, one of [None, 'micro', 'macro', 'weighted'].
+2025-06-15 01:26:58,734 - INFO - Starting training for XGBoostModel on filtered_features
+2025-06-15 01:26:58,784 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 01:26:58,784 - INFO - Feature columns: ['mfcc_0_mean', 'mfcc_1_mean', 'mfcc_2_mean', 'mfcc_3_mean', 'mfcc_4_mean', 'mfcc_5_mean', 'mfcc_6_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_9_mean', 'mfcc_10_mean', 'mfcc_11_mean', 'mfcc_12_mean', 'mfcc_0_std', 'mfcc_1_std', 'mfcc_2_std', 'mfcc_3_std', 'mfcc_4_std', 'mfcc_5_std', 'mfcc_6_std', 'mfcc_7_std', 'mfcc_8_std', 'mfcc_9_std', 'mfcc_10_std', 'mfcc_11_std', 'mfcc_12_std', 'mfcc_0_min', 'mfcc_1_min', 'mfcc_2_min', 'mfcc_3_min', 'mfcc_4_min', 'mfcc_5_min', 'mfcc_6_min', 'mfcc_7_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_10_min', 'mfcc_11_min', 'mfcc_12_min', 'mfcc_0_max', 'mfcc_1_max', 'mfcc_2_max', 'mfcc_3_max', 'mfcc_4_max', 'mfcc_5_max', 'mfcc_6_max', 'mfcc_7_max', 'mfcc_8_max', 'mfcc_9_max', 'mfcc_10_max', 'mfcc_11_max', 'mfcc_12_max']
+2025-06-15 01:26:58,785 - INFO - Classes: ['calqua' 'comwax' 'houfin']
+2025-06-15 01:26:58,785 - INFO - Number of unique source files: 794
+2025-06-15 01:26:58,785 - INFO - Starting hyperparameter search with Optuna
+2025-06-15 01:26:58,820 - ERROR - Error during model training: Invalid classes inferred from unique values of `y`.  Expected: [0 1 2], got ['calqua' 'comwax' 'houfin']
+2025-06-15 01:26:58,820 - ERROR - Error training ModelType.XGBOOST on DatasetType.MY_AUDIO: Invalid classes inferred from unique values of `y`.  Expected: [0 1 2], got ['calqua' 'comwax' 'houfin']

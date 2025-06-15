@@ -1,14 +1,13 @@
 from sklearn.svm import SVC
 from utils.ClassificationMetrics import ClassificationMetrics
+from utils.config import RANDOM_STATE
 
 
 class SVCModel:
     def __init__(self, **kwargs):
-        default_params = {
-            "probability": True  # Enable probability estimates
-        }
+        default_params = {}
         model_params = {**default_params, **kwargs}
-        self.model = SVC(**model_params)
+        self.model = SVC(**model_params, probability=True)
 
     def train(self, X_train, y_train):
         self.model.fit(X_train, y_train)
@@ -26,3 +25,21 @@ class SVCModel:
 
     def get_params(self):
         return self.model.get_params()
+
+    def get_optuna_params(self, trial):
+        """Get hyperparameters for Optuna optimization"""
+        return {
+            'C': trial.suggest_float('C', 1e-3, 1e3, log=True),
+            'kernel': trial.suggest_categorical('kernel', ['rbf', 'poly', 'sigmoid']),
+            'gamma': trial.suggest_categorical('gamma', ['scale', 'auto']),
+            'class_weight': trial.suggest_categorical('class_weight', [None, 'balanced']),
+            'random_state': RANDOM_STATE
+        }
+
+    def get_model_instance(self, params):
+        """Create a new model instance with given parameters"""
+        return SVC(**params, probability=True)
+
+    def get_params_from_optuna_params(self, optuna_params):
+        """Convert Optuna parameters to model parameters"""
+        return optuna_params

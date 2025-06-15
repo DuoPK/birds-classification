@@ -24,3 +24,24 @@ class RandomForestModel:
 
     def get_params(self):
         return self.model.get_params()
+
+    def get_optuna_params(self, trial):
+        """Get hyperparameters for Optuna optimization"""
+        return {
+            'n_estimators': trial.suggest_int('n_estimators', 100, 500, step=100),
+            'max_depth': trial.suggest_int('max_depth', 4, 16, step=2),
+            'min_samples_split': trial.suggest_int('min_samples_split', 2, 10, step=2),
+            'min_samples_leaf': trial.suggest_int('min_samples_leaf', 1, 4, step=1),
+            'max_features': trial.suggest_categorical('max_features', ['sqrt', 'log2', None]),
+            'bootstrap': trial.suggest_categorical('bootstrap', [True, False]),
+            'criterion': trial.suggest_categorical('criterion', ['gini', 'entropy']),
+            'random_state': RANDOM_STATE
+        }
+
+    def get_model_instance(self, params):
+        """Create a new model instance with given parameters"""
+        return RandomForestClassifier(**params)
+
+    def get_params_from_optuna_params(self, optuna_params):
+        """Convert Optuna parameters to model parameters"""
+        return optuna_params
