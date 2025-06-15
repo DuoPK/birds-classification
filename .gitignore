@@ -7,6 +7,6 @@ __pycache__/
 
 *.log
 *.joblib
-*.csv
-*.png
+results/*.csv
+results/*.png
 catboost_info/

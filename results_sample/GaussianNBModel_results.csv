@@ -1,0 +1,2 @@
+model_type,dataset,accuracy,f1,precision,recall,roc_auc,confusion_matrix,best_params,timestamp
+GaussianNBModel,mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv,0.6861952861952862,0.6820238000218072,0.7251044791884333,0.6861952861952862,0.8513268739211268,"[[66, 127, 24], [13, 416, 57], [31, 214, 537]]",{'var_smoothing': 1e-09},2025-06-15 19:25:54

@@ -1,0 +1,2 @@
+model_type,dataset,accuracy,f1,precision,recall,roc_auc,confusion_matrix,best_params,timestamp
+QuadraticDiscriminantAnalysisModel,mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv,0.694949494949495,0.6892545796570564,0.74353500854345,0.694949494949495,0.8697648250627261,"[[63, 135, 19], [4, 423, 59], [22, 214, 546]]",{'reg_param': 0.4304863265548665},2025-06-15 19:25:54

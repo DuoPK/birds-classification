@@ -1,0 +1,2 @@
+model_type,dataset,accuracy,f1,precision,recall,roc_auc,confusion_matrix,best_params,timestamp
+StackingModel,mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv,0.7003367003367004,0.6985535477313756,0.7013938444505669,0.7003367003367004,0.8536380886180418,"[[88, 97, 32], [34, 341, 111], [47, 124, 611]]","{'cv': 3, 'lr_C': 9.117495677462541, 'gnb_var_smoothing': 1.2323287139253466e-09, 'qda_reg_param': 0.9453668081437087, 'rf_n_estimators': 178, 'rf_max_depth': 9, 'rf_min_samples_split': 8, 'rf_min_samples_leaf': 1}",2025-06-15 19:26:09

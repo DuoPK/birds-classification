@@ -1,0 +1,2 @@
+model_type,dataset,accuracy,f1,precision,recall,roc_auc,confusion_matrix,best_params,timestamp
+RandomForestModel,mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv,0.7164983164983165,0.7103271984633586,0.7149953243392576,0.7164983164983165,0.8567977911829566,"[[81, 83, 53], [19, 361, 106], [34, 126, 622]]","{'n_estimators': 100, 'max_depth': 10, 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_features': 'sqrt', 'bootstrap': True, 'criterion': 'gini'}",2025-06-15 19:25:53

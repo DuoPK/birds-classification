@@ -1,0 +1,2 @@
+model_type,dataset,accuracy,f1,precision,recall,roc_auc,confusion_matrix,best_params,timestamp
+CatBoostModel,mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv,0.7265993265993266,0.720574689909305,0.7241209720170371,0.7265993265993266,0.8615719154302732,"[[81, 84, 52], [19, 374, 93], [41, 117, 624]]","{'bootstrap_type': 'Bernoulli', 'iterations': 500, 'depth': 6, 'learning_rate': 0.012182462993132631, 'l2_leaf_reg': 0.6810303507633315, 'random_strength': 9.837173858471333, 'od_type': 'Iter', 'od_wait': 20}",2025-06-15 19:25:38

@@ -1,0 +1,2 @@
+model_type,dataset,accuracy,f1,precision,recall,roc_auc,confusion_matrix,best_params,timestamp
+VotingModel,mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv,0.7023569023569024,0.6980345075896195,0.731479656834114,0.7023569023569024,0.866528174691327,"[[69, 126, 22], [12, 408, 66], [31, 185, 566]]","{'voting': 'soft', 'weight_lr': 1.3579392959720749, 'weight_gnb': 0.7162892165272181, 'weight_qda': 0.6225274647807693, 'lr_C': 2.8403049632757966, 'gnb_var_smoothing': 1.440864597825577e-09, 'qda_reg_param': 0.6972404427100473}",2025-06-15 19:25:55

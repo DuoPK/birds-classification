@@ -1,0 +1,2 @@
+model_type,dataset,accuracy,f1,precision,recall,roc_auc,confusion_matrix,best_params,timestamp
+LogisticRegressionModel,mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv,0.7191919191919192,0.7168669389837344,0.7220431074877175,0.7191919191919192,0.8620128672520431,"[[85, 105, 27], [22, 371, 93], [58, 112, 612]]","{'solver': 'lbfgs', 'penalty': None, 'class_weight': None, 'C': 0.00336412092505927, 'max_iter': 100}",2025-06-15 19:25:53

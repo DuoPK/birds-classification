@@ -1,0 +1,2 @@
+model_type,dataset,accuracy,f1,precision,recall,roc_auc,confusion_matrix,best_params,timestamp
+SVCModel,mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv,0.7212121212121212,0.7121517082402087,0.7307512885216485,0.7212121212121212,0.8465492242953333,"[[70, 96, 51], [13, 379, 94], [16, 144, 622]]","{'C': 1.0, 'kernel': 'rbf', 'gamma': 'scale', 'class_weight': None}",2025-06-15 19:25:29
