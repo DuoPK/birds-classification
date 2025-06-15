@@ -35,35 +35,46 @@ class VotingModel:
         )
 
     def train(self, X, y):
-        """
-        Train the model
-        
-        Args:
-            X (numpy.ndarray): Training features
-            y (numpy.ndarray): Training labels
-        """
         self.model.fit(X, y)
 
     def predict(self, X):
-        """
-        Make predictions
-        
-        Args:
-            X (numpy.ndarray): Features to predict
-            
-        Returns:
-            numpy.ndarray: Predicted labels
-        """
         return self.model.predict(X)
 
     def predict_proba(self, X):
-        """
-        Get probability estimates
-        
-        Args:
-            X (numpy.ndarray): Features to predict probabilities for
-            
-        Returns:
-            numpy.ndarray: Probability estimates
-        """
         return self.model.predict_proba(X)
+
+    def get_params(self):
+        return self.model.get_params()
+
+    def get_optuna_params(self, trial):
+        voting = trial.suggest_categorical('voting', ['soft', 'hard'])
+        w1 = trial.suggest_float('weight_lr', 0.5, 2.0)
+        w2 = trial.suggest_float('weight_gnb', 0.5, 2.0)
+        w3 = trial.suggest_float('weight_qda', 0.5, 2.0)
+        lr_params = {'C': trial.suggest_float('lr_C', 0.01, 10.0)}
+        gnb_params = {'var_smoothing': trial.suggest_float('gnb_var_smoothing', 1e-10, 1e-8, log=True)}
+        qda_params = {'reg_param': trial.suggest_float('qda_reg_param', 0.0, 1.0)}
+        return {
+            'voting': voting,
+            'weights': [w1, w2, w3],
+            'lr_params': lr_params,
+            'gnb_params': gnb_params,
+            'qda_params': qda_params
+        }
+
+    def get_model_instance(self, params):
+        lr = LogisticRegressionModel(**params.get('lr_params', {})).model
+        gnb = GaussianNBModel(**params.get('gnb_params', {})).model
+        qda = QuadraticDiscriminantAnalysisModel(**params.get('qda_params', {})).model
+        return VotingClassifier(
+            estimators=[
+                ('lr', lr),
+                ('gnb', gnb),
+                ('qda', qda)
+            ],
+            voting=params.get('voting', 'soft'),
+            weights=params.get('weights', [1.0, 1.0, 1.0])
+        )
+
+    def get_params_from_optuna_params(self, optuna_params):
+        return optuna_params

@@ -1,46 +1,28 @@
 from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis
-import numpy as np
+
 
 class QuadraticDiscriminantAnalysisModel:
-    def __init__(self, **kwargs):
-        """
-        Initialize a Quadratic Discriminant Analysis model
-        
-        Args:
-            **kwargs: Additional parameters for QuadraticDiscriminantAnalysis
-        """
-        self.model = QuadraticDiscriminantAnalysis(**kwargs)
-    
+    def __init__(self, reg_param=0.0, **kwargs):
+        self.model = QuadraticDiscriminantAnalysis(reg_param=reg_param, **kwargs)
+
     def train(self, X, y):
-        """
-        Train the model
-        
-        Args:
-            X (numpy.ndarray): Training features
-            y (numpy.ndarray): Training labels
-        """
         self.model.fit(X, y)
-    
+
     def predict(self, X):
-        """
-        Make predictions
-        
-        Args:
-            X (numpy.ndarray): Features to predict
-            
-        Returns:
-            numpy.ndarray: Predicted labels
-        """
         return self.model.predict(X)
-    
+
     def predict_proba(self, X):
-        """
-        Get probability estimates
-        
-        Args:
-            X (numpy.ndarray): Features to predict probabilities for
-            
-        Returns:
-            numpy.ndarray: Probability estimates
-        """
-        return self.model.predict_proba(X) 
+        return self.model.predict_proba(X)
+
+    def get_params(self):
+        return self.model.get_params()
+
+    def get_optuna_params(self, trial):
+        reg_param = trial.suggest_float('reg_param', 0.0, 1.0)
+        return {'reg_param': reg_param}
+
+    def get_model_instance(self, params):
+        return QuadraticDiscriminantAnalysis(**params)
+
+    def get_params_from_optuna_params(self, optuna_params):
+        return optuna_params

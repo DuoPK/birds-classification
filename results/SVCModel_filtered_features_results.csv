@@ -1,2 +1,0 @@
-model_type,dataset,accuracy,f1,precision,recall,roc_auc,confusion_matrix,best_params,timestamp
-SVCModel,filtered_features.csv,0.795959595959596,0.7940623103060468,0.7980761454158088,0.795959595959596,0.9054897786522239,"[[127, 49, 41], [11, 392, 83], [22, 97, 663]]","{'C': 3.013580248260125, 'kernel': 'rbf', 'gamma': 'scale', 'class_weight': None}",2025-06-15 08:47:48

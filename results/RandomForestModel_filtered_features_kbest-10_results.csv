@@ -1,2 +1,0 @@
-model_type,dataset,accuracy,f1,precision,recall,roc_auc,confusion_matrix,best_params,timestamp
-RandomForestModel,filtered_features.csv,0.731986531986532,0.7293085772039587,0.7291264652500248,0.731986531986532,0.881717787516854,"[[103, 62, 52], [11, 365, 110], [62, 101, 619]]","{'n_estimators': 300, 'max_depth': 10, 'min_samples_split': 6, 'min_samples_leaf': 3, 'max_features': 'sqrt', 'bootstrap': True, 'criterion': 'gini'}",2025-06-15 09:06:31

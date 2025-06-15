@@ -1,2 +1,0 @@
-model_type,dataset,accuracy,f1,precision,recall,roc_auc,confusion_matrix,best_params,timestamp
-XGBoostModel,filtered_features.csv,0.775084175084175,0.7731333195250721,0.7743996490488624,0.775084175084175,0.9107946315059787,"[[126, 47, 44], [8, 374, 104], [37, 94, 651]]","{'n_estimators': 400, 'max_depth': 6, 'learning_rate': 0.030315709166063964, 'subsample': 0.7125456746939529, 'colsample_bytree': 0.832557191156439, 'min_child_weight': 6, 'gamma': 0.6709383902464033, 'reg_alpha': 6.645768779625113, 'reg_lambda': 0.20351714709008842}",2025-06-15 09:01:00

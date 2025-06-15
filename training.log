@@ -1,24 +1,433 @@
-2025-06-15 01:32:38,607 - INFO - Starting training for RandomForestModel on filtered_features.csv
-2025-06-15 01:32:38,667 - INFO - Loaded dataset with 7515 samples and 52 features
-2025-06-15 01:32:38,678 - INFO - Split data into 635 training files and 159 test files
-2025-06-15 01:32:38,678 - ERROR - Error during model training: 'RandomForestModel' object has no attribute 'get_optuna_params'
-2025-06-15 01:35:51,414 - INFO - Starting training for RandomForestModel on filtered_features.csv
-2025-06-15 01:35:51,464 - INFO - Loaded dataset with 7515 samples and 52 features
-2025-06-15 01:35:51,470 - INFO - Split data into 635 training files and 159 test files
-2025-06-15 01:48:28,166 - INFO - Starting training for SVCModel on filtered_features.csv
-2025-06-15 01:48:28,223 - INFO - Loaded dataset with 7515 samples and 52 features
-2025-06-15 01:48:28,233 - INFO - Split data into 635 training files and 159 test files
-2025-06-15 01:49:34,897 - INFO - Training completed for SVCModel
-2025-06-15 01:49:34,897 - INFO - Best parameters: {'C': 0.7261696974503035, 'kernel': 'rbf', 'gamma': 'auto', 'class_weight': None}
-2025-06-15 01:49:34,897 - INFO - Test metrics: {'accuracy': 0.7905723905723906, 'f1_score': 0.7883787339388925, 'precision': 0.7940663965700859, 'recall': 0.7905723905723906, 'confusion_matrix': array([[125,  46,  46],
-       [  7, 388,  91],
-       [ 19, 102, 661]])}
-2025-06-15 01:49:34,897 - INFO - Model saved to: models/saved\SVCModel_filtered_features.joblib
-2025-06-15 01:49:34,897 - INFO - Results saved to: results\SVCModel_filtered_features_results.joblib
-2025-06-15 01:49:53,913 - INFO - Starting training for XGBoostModel on filtered_features.csv
-2025-06-15 01:49:53,966 - INFO - Loaded dataset with 7515 samples and 52 features
-2025-06-15 01:49:53,972 - INFO - Split data into 635 training files and 159 test files
-2025-06-15 01:49:59,789 - ERROR - Error during model training: 
+2025-06-15 16:43:49,599 - INFO - Starting training for SVCModel on mfcc\butter\savgol\mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 16:43:49,668 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 16:43:49,681 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 16:43:49,698 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 16:46:32,941 - INFO - Obrazek macierzy pomyłek zapisany: results\SVCModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_confusion_matrix.png
+2025-06-15 16:46:32,941 - INFO - Training completed for SVCModel
+2025-06-15 16:46:32,941 - INFO - Best parameters: {'C': 1.0, 'kernel': 'rbf', 'gamma': 'scale', 'class_weight': None}
+2025-06-15 16:46:32,941 - INFO - Test metrics: {'accuracy': 0.7212121212121212, 'f1': 0.7121517082402087, 'precision': 0.7307512885216485, 'recall': 0.7212121212121212, 'roc_auc': 0.8465492242953333, 'confusion_matrix': array([[ 70,  96,  51],
+       [ 13, 379,  94],
+       [ 16, 144, 622]])}
+2025-06-15 16:46:32,941 - INFO - Model saved to: models/saved\SVCModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10.joblib
+2025-06-15 16:46:32,941 - INFO - Results saved to: results\SVCModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_results.csv
+2025-06-15 16:49:45,087 - INFO - Starting training for SVCModel on mfcc\butter\savgol\mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 16:49:45,138 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 16:49:45,144 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 16:49:45,151 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:03:46,672 - INFO - Starting training for SVCModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:03:46,737 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:03:46,745 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:03:46,755 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:03:46,755 - ERROR - Error during model training: 'SVCModel'
+2025-06-15 17:03:46,755 - INFO - Starting training for CatBoostModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:03:46,820 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:03:46,826 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:03:46,834 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:03:46,834 - ERROR - Error during model training: 'CatBoostModel'
+2025-06-15 17:03:46,836 - INFO - Starting training for XGBoostModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:03:46,901 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:03:46,910 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:03:46,917 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:03:46,917 - ERROR - Error during model training: 'XGBoostModel'
+2025-06-15 17:03:46,918 - INFO - Starting training for RandomForestModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:03:46,970 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:03:46,975 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:03:46,981 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:03:46,982 - ERROR - Error during model training: 'RandomForestModel'
+2025-06-15 17:03:46,982 - INFO - Starting training for LogisticRegressionModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:03:47,037 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:03:47,043 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:03:47,049 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:03:47,049 - ERROR - Error during model training: 'LogisticRegressionModel'
+2025-06-15 17:03:47,049 - INFO - Starting training for GaussianNBModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:03:47,099 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:03:47,105 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:03:47,113 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:03:47,113 - ERROR - Error during model training: 'GaussianNBModel'
+2025-06-15 17:03:47,114 - INFO - Starting training for QuadraticDiscriminantAnalysisModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:03:47,181 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:03:47,189 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:03:47,197 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:03:47,198 - ERROR - Error during model training: 'QuadraticDiscriminantAnalysisModel'
+2025-06-15 17:03:47,198 - INFO - Starting training for VotingModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:03:47,256 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:03:47,261 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:03:47,269 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:03:47,269 - ERROR - Error during model training: 'VotingModel'
+2025-06-15 17:03:47,270 - INFO - Starting training for StackingModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:03:47,331 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:03:47,340 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:03:47,350 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:03:47,351 - ERROR - Error during model training: 'StackingModel'
+2025-06-15 17:03:47,352 - INFO - Starting training for SVCModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:03:47,421 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:03:47,427 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:03:47,434 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:03:47,434 - ERROR - Error during model training: 'SVCModel'
+2025-06-15 17:03:47,435 - INFO - Starting training for CatBoostModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:03:47,485 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:03:47,491 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:03:47,497 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:03:47,497 - ERROR - Error during model training: 'CatBoostModel'
+2025-06-15 17:03:47,498 - INFO - Starting training for XGBoostModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:03:47,556 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:03:47,564 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:03:47,575 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:03:47,576 - ERROR - Error during model training: 'XGBoostModel'
+2025-06-15 17:03:47,577 - INFO - Starting training for RandomForestModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:03:47,650 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:03:47,657 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:03:47,664 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:03:47,664 - ERROR - Error during model training: 'RandomForestModel'
+2025-06-15 17:03:47,665 - INFO - Starting training for LogisticRegressionModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:03:47,715 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:03:47,721 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:03:47,727 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:03:47,727 - ERROR - Error during model training: 'LogisticRegressionModel'
+2025-06-15 17:03:47,728 - INFO - Starting training for GaussianNBModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:03:47,786 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:03:47,794 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:03:47,800 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:03:47,800 - ERROR - Error during model training: 'GaussianNBModel'
+2025-06-15 17:03:47,801 - INFO - Starting training for QuadraticDiscriminantAnalysisModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:03:47,863 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:03:47,869 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:03:47,875 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:03:47,875 - ERROR - Error during model training: 'QuadraticDiscriminantAnalysisModel'
+2025-06-15 17:03:47,876 - INFO - Starting training for VotingModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:03:47,933 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:03:47,939 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:03:47,945 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:03:47,945 - ERROR - Error during model training: 'VotingModel'
+2025-06-15 17:03:47,946 - INFO - Starting training for StackingModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:03:48,001 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:03:48,010 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:03:48,020 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:03:48,020 - ERROR - Error during model training: 'StackingModel'
+2025-06-15 17:06:16,805 - INFO - Starting training for SVCModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:06:16,856 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:06:16,863 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:06:16,870 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:06:16,870 - ERROR - Error during model training: 'DatasetType' object has no attribute 'replace'
+2025-06-15 17:06:16,870 - INFO - Starting training for CatBoostModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:06:16,920 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:06:16,926 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:06:16,932 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:06:16,932 - ERROR - Error during model training: 'DatasetType' object has no attribute 'replace'
+2025-06-15 17:06:16,933 - INFO - Starting training for XGBoostModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:06:16,995 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:06:17,002 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:06:17,008 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:06:17,008 - ERROR - Error during model training: 'DatasetType' object has no attribute 'replace'
+2025-06-15 17:06:17,008 - INFO - Starting training for RandomForestModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:06:17,068 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:06:17,074 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:06:17,080 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:06:17,081 - ERROR - Error during model training: 'DatasetType' object has no attribute 'replace'
+2025-06-15 17:06:17,081 - INFO - Starting training for LogisticRegressionModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:06:17,131 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:06:17,137 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:06:17,143 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:06:17,143 - ERROR - Error during model training: 'DatasetType' object has no attribute 'replace'
+2025-06-15 17:06:17,143 - INFO - Starting training for GaussianNBModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:06:17,197 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:06:17,203 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:06:17,208 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:06:17,209 - ERROR - Error during model training: 'DatasetType' object has no attribute 'replace'
+2025-06-15 17:06:17,209 - INFO - Starting training for QuadraticDiscriminantAnalysisModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:06:17,295 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:06:17,303 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:06:17,313 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:06:17,313 - ERROR - Error during model training: 'DatasetType' object has no attribute 'replace'
+2025-06-15 17:06:17,314 - INFO - Starting training for VotingModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:06:17,375 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:06:17,383 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:06:17,389 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:06:17,390 - ERROR - Error during model training: 'DatasetType' object has no attribute 'replace'
+2025-06-15 17:06:17,390 - INFO - Starting training for StackingModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:06:17,444 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:06:17,450 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:06:17,456 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:06:17,456 - ERROR - Error during model training: 'DatasetType' object has no attribute 'replace'
+2025-06-15 17:06:17,457 - INFO - Starting training for SVCModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:06:17,528 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:06:17,537 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:06:17,545 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:09:38,023 - INFO - Starting training for SVCModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:09:38,073 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:09:38,079 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:09:38,086 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:09:38,086 - ERROR - Error during model training: expected str, bytes or os.PathLike object, not DatasetType
+2025-06-15 17:09:38,086 - INFO - Starting training for CatBoostModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:09:38,141 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:09:38,146 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:09:38,153 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:09:38,153 - ERROR - Error during model training: expected str, bytes or os.PathLike object, not DatasetType
+2025-06-15 17:09:38,153 - INFO - Starting training for XGBoostModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:09:38,215 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:09:38,221 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:09:38,227 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:09:38,228 - ERROR - Error during model training: expected str, bytes or os.PathLike object, not DatasetType
+2025-06-15 17:09:38,228 - INFO - Starting training for RandomForestModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:09:38,279 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:09:38,284 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:09:38,291 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:09:38,291 - ERROR - Error during model training: expected str, bytes or os.PathLike object, not DatasetType
+2025-06-15 17:09:38,291 - INFO - Starting training for LogisticRegressionModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:09:38,341 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:09:38,346 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:09:38,353 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:09:38,353 - ERROR - Error during model training: expected str, bytes or os.PathLike object, not DatasetType
+2025-06-15 17:09:38,353 - INFO - Starting training for GaussianNBModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:09:38,404 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:09:38,410 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:09:38,417 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:09:38,417 - ERROR - Error during model training: expected str, bytes or os.PathLike object, not DatasetType
+2025-06-15 17:09:38,417 - INFO - Starting training for QuadraticDiscriminantAnalysisModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:09:38,482 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:09:38,490 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:09:38,500 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:09:38,501 - ERROR - Error during model training: expected str, bytes or os.PathLike object, not DatasetType
+2025-06-15 17:09:38,501 - INFO - Starting training for VotingModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:09:38,561 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:09:38,566 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:09:38,572 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:09:38,573 - ERROR - Error during model training: expected str, bytes or os.PathLike object, not DatasetType
+2025-06-15 17:09:38,573 - INFO - Starting training for StackingModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:09:38,624 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:09:38,630 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:09:38,637 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:09:38,637 - ERROR - Error during model training: expected str, bytes or os.PathLike object, not DatasetType
+2025-06-15 17:09:38,638 - INFO - Starting training for SVCModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:09:38,694 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:09:38,702 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:09:38,709 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:11:13,079 - INFO - Starting training for SVCModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:11:13,129 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:11:13,136 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:11:13,142 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:11:13,142 - ERROR - Error during model training: expected str, bytes or os.PathLike object, not DatasetType
+2025-06-15 17:11:13,142 - INFO - Starting training for CatBoostModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:11:13,193 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:11:13,199 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:11:13,206 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:11:13,206 - ERROR - Error during model training: expected str, bytes or os.PathLike object, not DatasetType
+2025-06-15 17:11:13,206 - INFO - Starting training for XGBoostModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:11:13,257 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:11:13,267 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:11:13,273 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:11:13,273 - ERROR - Error during model training: expected str, bytes or os.PathLike object, not DatasetType
+2025-06-15 17:11:13,274 - INFO - Starting training for RandomForestModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:11:13,326 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:11:13,334 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:11:13,340 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:11:13,341 - ERROR - Error during model training: expected str, bytes or os.PathLike object, not DatasetType
+2025-06-15 17:11:13,341 - INFO - Starting training for LogisticRegressionModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:11:13,390 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:11:13,396 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:11:13,404 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:11:13,404 - ERROR - Error during model training: expected str, bytes or os.PathLike object, not DatasetType
+2025-06-15 17:11:13,404 - INFO - Starting training for GaussianNBModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:11:13,456 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:11:13,461 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:11:13,468 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:11:13,468 - ERROR - Error during model training: expected str, bytes or os.PathLike object, not DatasetType
+2025-06-15 17:11:13,468 - INFO - Starting training for QuadraticDiscriminantAnalysisModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:11:13,541 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:11:13,549 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:11:13,561 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:11:13,561 - ERROR - Error during model training: expected str, bytes or os.PathLike object, not DatasetType
+2025-06-15 17:11:13,562 - INFO - Starting training for VotingModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:11:13,634 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:11:13,642 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:11:13,650 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:11:13,650 - ERROR - Error during model training: expected str, bytes or os.PathLike object, not DatasetType
+2025-06-15 17:11:13,651 - INFO - Starting training for StackingModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:11:13,707 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:11:13,713 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:11:13,720 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:11:13,721 - ERROR - Error during model training: expected str, bytes or os.PathLike object, not DatasetType
+2025-06-15 17:11:13,721 - INFO - Starting training for SVCModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:11:13,775 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:11:13,782 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:11:13,789 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:12:05,589 - INFO - Starting training for SVCModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:12:05,645 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:12:05,653 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:12:05,661 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:12:05,661 - ERROR - Error during model training: expected str, bytes or os.PathLike object, not DatasetType
+2025-06-15 17:12:05,662 - INFO - Starting training for CatBoostModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:12:05,716 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:12:05,722 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:12:05,730 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:12:05,730 - ERROR - Error during model training: expected str, bytes or os.PathLike object, not DatasetType
+2025-06-15 17:12:05,731 - INFO - Starting training for XGBoostModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:12:05,787 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:12:05,792 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:12:05,800 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:12:05,800 - ERROR - Error during model training: expected str, bytes or os.PathLike object, not DatasetType
+2025-06-15 17:12:05,801 - INFO - Starting training for RandomForestModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:12:05,849 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:12:05,855 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:12:05,862 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:12:05,863 - ERROR - Error during model training: expected str, bytes or os.PathLike object, not DatasetType
+2025-06-15 17:12:05,863 - INFO - Starting training for LogisticRegressionModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:12:05,914 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:12:05,919 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:12:05,926 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:12:05,926 - ERROR - Error during model training: expected str, bytes or os.PathLike object, not DatasetType
+2025-06-15 17:12:05,926 - INFO - Starting training for GaussianNBModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:12:05,987 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:12:05,993 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:12:05,999 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:12:05,999 - ERROR - Error during model training: expected str, bytes or os.PathLike object, not DatasetType
+2025-06-15 17:12:06,000 - INFO - Starting training for QuadraticDiscriminantAnalysisModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:12:06,086 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:12:06,095 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:12:06,105 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:12:06,105 - ERROR - Error during model training: expected str, bytes or os.PathLike object, not DatasetType
+2025-06-15 17:12:06,105 - INFO - Starting training for VotingModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:12:06,156 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:12:06,162 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:12:06,168 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:12:06,168 - ERROR - Error during model training: expected str, bytes or os.PathLike object, not DatasetType
+2025-06-15 17:12:06,168 - INFO - Starting training for StackingModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:12:06,227 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:12:06,234 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:12:06,243 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:12:06,244 - ERROR - Error during model training: expected str, bytes or os.PathLike object, not DatasetType
+2025-06-15 17:12:06,245 - INFO - Starting training for SVCModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:12:06,308 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:12:06,315 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:12:06,321 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:13:28,753 - INFO - Starting training for SVCModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:13:28,798 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:13:28,818 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:13:28,843 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:13:28,843 - ERROR - Error during model training: expected str, bytes or os.PathLike object, not DatasetType
+2025-06-15 17:13:28,843 - INFO - Starting training for CatBoostModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:13:28,897 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:13:28,897 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:13:28,914 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:13:28,914 - ERROR - Error during model training: expected str, bytes or os.PathLike object, not DatasetType
+2025-06-15 17:13:28,914 - INFO - Starting training for XGBoostModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:13:28,985 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:13:28,993 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:13:28,998 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:13:28,998 - ERROR - Error during model training: expected str, bytes or os.PathLike object, not DatasetType
+2025-06-15 17:13:28,998 - INFO - Starting training for RandomForestModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:13:29,063 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:13:29,072 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:13:29,080 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:13:29,080 - ERROR - Error during model training: expected str, bytes or os.PathLike object, not DatasetType
+2025-06-15 17:13:29,080 - INFO - Starting training for LogisticRegressionModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:13:29,137 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:13:29,149 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:13:29,163 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:13:29,163 - ERROR - Error during model training: expected str, bytes or os.PathLike object, not DatasetType
+2025-06-15 17:13:29,165 - INFO - Starting training for GaussianNBModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:13:29,217 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:13:29,225 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:13:29,239 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:13:29,239 - ERROR - Error during model training: expected str, bytes or os.PathLike object, not DatasetType
+2025-06-15 17:13:29,239 - INFO - Starting training for QuadraticDiscriminantAnalysisModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:13:29,298 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:13:29,299 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:13:29,313 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:13:29,313 - ERROR - Error during model training: expected str, bytes or os.PathLike object, not DatasetType
+2025-06-15 17:13:29,313 - INFO - Starting training for VotingModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:13:29,381 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:13:29,381 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:13:29,406 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:13:29,406 - ERROR - Error during model training: expected str, bytes or os.PathLike object, not DatasetType
+2025-06-15 17:13:29,406 - INFO - Starting training for StackingModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:13:29,462 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:13:29,462 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:13:29,487 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:13:29,487 - ERROR - Error during model training: expected str, bytes or os.PathLike object, not DatasetType
+2025-06-15 17:15:57,358 - INFO - Starting training for SVCModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:15:59,287 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:15:59,303 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:15:59,320 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:16:51,307 - ERROR - Error during model training: expected str, bytes or os.PathLike object, not DatasetType
+2025-06-15 17:16:53,073 - INFO - Starting training for CatBoostModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:16:55,933 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:16:55,955 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:16:55,968 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:17:00,129 - ERROR - Error during model training: expected str, bytes or os.PathLike object, not DatasetType
+2025-06-15 17:17:05,976 - INFO - Starting training for XGBoostModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:17:06,744 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:17:06,753 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:17:06,769 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:17:07,406 - ERROR - Error during model training: expected str, bytes or os.PathLike object, not DatasetType
+2025-06-15 17:17:10,157 - INFO - Starting training for RandomForestModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:17:11,026 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:17:11,034 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:17:11,043 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:17:40,314 - ERROR - Error during model training: expected str, bytes or os.PathLike object, not DatasetType
+2025-06-15 17:17:43,280 - INFO - Starting training for LogisticRegressionModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:17:43,934 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:17:43,938 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:17:43,951 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:17:44,352 - ERROR - Error during model training: expected str, bytes or os.PathLike object, not DatasetType
+2025-06-15 17:17:47,222 - INFO - Starting training for GaussianNBModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:17:47,774 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:17:47,774 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:17:47,791 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:17:48,112 - ERROR - Error during model training: expected str, bytes or os.PathLike object, not DatasetType
+2025-06-15 17:17:58,091 - INFO - Starting training for QuadraticDiscriminantAnalysisModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:37:51,600 - INFO - Starting training for SVCModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 17:37:57,641 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 17:37:57,660 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 17:37:57,672 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 17:38:19,556 - ERROR - Error during model training: expected str, bytes or os.PathLike object, not DatasetType
+2025-06-15 18:22:25,024 - INFO - Starting training for SVCModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 18:22:25,081 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 18:22:25,088 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 18:22:25,095 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 18:26:21,951 - INFO - Training on file: data_generation\data\mfcc\butter\savgol\mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 18:26:21,951 - INFO - Starting training for XGBoostModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 18:26:22,000 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 18:26:22,006 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 18:26:22,013 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 18:26:38,143 - INFO - Confucion-matrix img saved: results\XGBoostModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_confusion_matrix.png
+2025-06-15 18:26:38,163 - INFO - Training completed for XGBoostModel
+2025-06-15 18:26:38,164 - INFO - Best parameters: {'n_estimators': 200, 'max_depth': 10, 'learning_rate': 0.014853817626593937, 'subsample': 0.8613224560948038, 'colsample_bytree': 0.7425406452913739, 'min_child_weight': 6, 'gamma': 0.17104028703555596, 'reg_alpha': 6.14452589707001, 'reg_lambda': 5.741628728405618}
+2025-06-15 18:26:38,164 - INFO - Test metrics: {'accuracy': 0.7191919191919192, 'f1': 0.7136556739936528, 'precision': 0.7145324069017727, 'recall': 0.7191919191919192, 'roc_auc': 0.8529317664915159, 'confusion_matrix': array([[ 82,  82,  53],
+       [ 17, 365, 104],
+       [ 52, 109, 621]])}
+2025-06-15 18:26:38,164 - INFO - Model saved to: models/saved\XGBoostModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10.joblib
+2025-06-15 18:26:38,164 - INFO - Results saved to: results\XGBoostModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_results.csv
+2025-06-15 18:30:12,869 - INFO - Training on file: data_generation\data\mfcc\butter\savgol\mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 18:30:12,869 - INFO - Starting training for XGBoostModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 18:30:12,925 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 18:30:12,932 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 18:30:12,939 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 18:30:18,013 - INFO - Confucion-matrix img saved: results\XGBoostModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_confusion_matrix.png
+2025-06-15 18:30:18,024 - INFO - Training completed for XGBoostModel
+2025-06-15 18:30:18,024 - INFO - Best parameters: {'n_estimators': 200, 'max_depth': 8, 'learning_rate': 0.023196757733435207, 'subsample': 0.6022999074930404, 'colsample_bytree': 0.6736995175151114, 'min_child_weight': 7, 'gamma': 0.18987460353128238, 'reg_alpha': 8.27371281305195, 'reg_lambda': 9.51007820349358}
+2025-06-15 18:30:18,024 - INFO - Test metrics: {'accuracy': 0.7164983164983165, 'f1': 0.7117263009751634, 'precision': 0.7124062054755808, 'recall': 0.7164983164983165, 'roc_auc': 0.8574002439502592, 'confusion_matrix': array([[ 84,  80,  53],
+       [ 19, 363, 104],
+       [ 54, 111, 617]])}
+2025-06-15 18:30:18,024 - INFO - Model saved to: models/saved\XGBoostModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10.joblib
+2025-06-15 18:30:18,024 - INFO - Results saved to: results\XGBoostModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_results.csv
+2025-06-15 18:30:18,024 - INFO - Starting training for SVCModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 18:30:18,083 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 18:30:18,090 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 18:30:18,098 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 18:30:36,988 - INFO - Confucion-matrix img saved: results\SVCModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_confusion_matrix.png
+2025-06-15 18:30:36,989 - INFO - Training completed for SVCModel
+2025-06-15 18:30:36,990 - INFO - Best parameters: {'C': 1.0, 'kernel': 'rbf', 'gamma': 'scale', 'class_weight': None}
+2025-06-15 18:30:36,990 - INFO - Test metrics: {'accuracy': 0.7212121212121212, 'f1': 0.7121517082402087, 'precision': 0.7307512885216485, 'recall': 0.7212121212121212, 'roc_auc': 0.8465492242953333, 'confusion_matrix': array([[ 70,  96,  51],
+       [ 13, 379,  94],
+       [ 16, 144, 622]])}
+2025-06-15 18:30:36,990 - INFO - Model saved to: models/saved\SVCModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10.joblib
+2025-06-15 18:30:36,990 - INFO - Results saved to: results\SVCModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_results.csv
+2025-06-15 18:30:36,990 - INFO - Starting training for CatBoostModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 18:30:37,040 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 18:30:37,046 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 18:30:37,052 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 18:30:39,526 - ERROR - Error during model training: 
 All the 5 fits failed.
 It is very likely that your model is misconfigured.
 You can try to debug the error by setting error_score='raise'.
@@ -27,126 +436,547 @@ Below are more details about the failures:
 --------------------------------------------------------------------------------
 5 fits failed with the following error:
 Traceback (most recent call last):
-  File "C:\Users\Eve\Documents\PK\II_Stopien\Zajecia\Semestr_2\Zaawansowane_metody_uczenia_maszynowego\Projekt2\birds-classification\.venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 859, in _fit_and_score
+  File "C:\Users\Eve\Documents\PK\II_Stopien\Zajecia\Semestr_2\Zaawansowane_metody_uczenia_maszynowego\Projekt2_v2\birds-classification\venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 859, in _fit_and_score
     estimator.fit(X_train, y_train, **fit_params)
-  File "C:\Users\Eve\Documents\PK\II_Stopien\Zajecia\Semestr_2\Zaawansowane_metody_uczenia_maszynowego\Projekt2\birds-classification\.venv\Lib\site-packages\xgboost\core.py", line 729, in inner_f
-    return func(**kwargs)
-           ^^^^^^^^^^^^^^
-  File "C:\Users\Eve\Documents\PK\II_Stopien\Zajecia\Semestr_2\Zaawansowane_metody_uczenia_maszynowego\Projekt2\birds-classification\.venv\Lib\site-packages\xgboost\sklearn.py", line 1640, in fit
-    raise ValueError(
-ValueError: Invalid classes inferred from unique values of `y`.  Expected: [0 1 2], got ['calqua' 'comwax' 'houfin']
+  File "C:\Users\Eve\Documents\PK\II_Stopien\Zajecia\Semestr_2\Zaawansowane_metody_uczenia_maszynowego\Projekt2_v2\birds-classification\venv\Lib\site-packages\catboost\core.py", line 5245, in fit
+    self._fit(X, y, cat_features, text_features, embedding_features, None, graph, sample_weight, None, None, None, None, baseline, use_best_model,
+  File "C:\Users\Eve\Documents\PK\II_Stopien\Zajecia\Semestr_2\Zaawansowane_metody_uczenia_maszynowego\Projekt2_v2\birds-classification\venv\Lib\site-packages\catboost\core.py", line 2395, in _fit
+    train_params = self._prepare_train_params(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Eve\Documents\PK\II_Stopien\Zajecia\Semestr_2\Zaawansowane_metody_uczenia_maszynowego\Projekt2_v2\birds-classification\venv\Lib\site-packages\catboost\core.py", line 2321, in _prepare_train_params
+    _check_train_params(params)
+  File "_catboost.pyx", line 6601, in _catboost._check_train_params
+  File "_catboost.pyx", line 6623, in _catboost._check_train_params
+_catboost.CatBoostError: catboost/private/libs/options/bootstrap_options.cpp:44: Error: bagging temperature available for bayesian bootstrap only
 
-2025-06-15 01:51:56,031 - INFO - Starting training for XGBoostModel on filtered_features.csv
-2025-06-15 01:51:56,081 - INFO - Loaded dataset with 7515 samples and 52 features
-2025-06-15 01:51:56,098 - INFO - Split data into 635 training files and 159 test files
-2025-06-15 01:52:58,124 - ERROR - Error during model training: multi_class must be in ('ovo', 'ovr')
-2025-06-15 08:12:14,313 - INFO - Starting training for RandomForestModel on filtered_features.csv
-2025-06-15 08:12:14,371 - INFO - Loaded dataset with 7515 samples and 52 features
-2025-06-15 08:12:14,381 - INFO - Split data into 635 training files and 159 test files
-2025-06-15 08:18:54,821 - ERROR - Error during model training: join() argument must be str, bytes, or os.PathLike object, not 'DatasetType'
-2025-06-15 08:32:14,988 - INFO - Starting training for SVCModel on filtered_features.csv
-2025-06-15 08:32:15,039 - INFO - Loaded dataset with 7515 samples and 52 features
-2025-06-15 08:32:15,045 - INFO - Split data into 635 training files and 159 test files
-2025-06-15 08:32:49,273 - ERROR - Error during model training: join() argument must be str, bytes, or os.PathLike object, not 'DatasetType'
-2025-06-15 08:35:35,609 - INFO - Starting training for SVCModel on filtered_features.csv
-2025-06-15 08:35:35,673 - INFO - Loaded dataset with 7515 samples and 52 features
-2025-06-15 08:35:35,686 - INFO - Split data into 635 training files and 159 test files
-2025-06-15 08:36:03,229 - ERROR - Error during model training: join() argument must be str, bytes, or os.PathLike object, not 'DatasetType'
-2025-06-15 08:36:38,215 - INFO - Starting training for SVCModel on filtered_features.csv
-2025-06-15 08:36:38,275 - INFO - Loaded dataset with 7515 samples and 52 features
-2025-06-15 08:36:38,288 - INFO - Split data into 635 training files and 159 test files
-2025-06-15 08:38:32,475 - ERROR - Error during model training: join() argument must be str, bytes, or os.PathLike object, not 'DatasetType'
-2025-06-15 08:39:04,836 - INFO - Starting training for SVCModel on filtered_features.csv
-2025-06-15 08:39:04,895 - INFO - Loaded dataset with 7515 samples and 52 features
-2025-06-15 08:39:04,902 - INFO - Split data into 635 training files and 159 test files
-2025-06-15 08:39:18,392 - INFO - Training completed for SVCModel
-2025-06-15 08:39:18,392 - INFO - Best parameters: {'C': 3.013580248260125, 'kernel': 'rbf', 'gamma': 'scale', 'class_weight': None}
-2025-06-15 08:39:18,392 - INFO - Test metrics: {'accuracy': 0.795959595959596, 'f1': 0.7940623103060468, 'precision': 0.7980761454158088, 'recall': 0.795959595959596, 'roc_auc': 0.9054897786522239, 'confusion_matrix': array([[127,  49,  41],
-       [ 11, 392,  83],
-       [ 22,  97, 663]])}
-2025-06-15 08:39:18,392 - INFO - Model saved to: models/saved\SVCModel_filtered_features.joblib
-2025-06-15 08:39:18,392 - INFO - Results saved to: results\SVCModel_filtered_features_results.csv
-2025-06-15 08:46:48,719 - INFO - Starting training for SVCModel on filtered_features.csv
-2025-06-15 08:46:48,769 - INFO - Loaded dataset with 7515 samples and 52 features
-2025-06-15 08:46:48,775 - INFO - Split data into 635 training files and 159 test files
-2025-06-15 08:47:00,941 - ERROR - Error during model training: DatasetType.get_dataset_name() missing 1 required positional argument: 'dataset_type'
-2025-06-15 08:47:37,500 - INFO - Starting training for SVCModel on filtered_features.csv
-2025-06-15 08:47:37,553 - INFO - Loaded dataset with 7515 samples and 52 features
-2025-06-15 08:47:37,559 - INFO - Split data into 635 training files and 159 test files
-2025-06-15 08:47:48,997 - INFO - Training completed for SVCModel
-2025-06-15 08:47:48,997 - INFO - Best parameters: {'C': 3.013580248260125, 'kernel': 'rbf', 'gamma': 'scale', 'class_weight': None}
-2025-06-15 08:47:48,997 - INFO - Test metrics: {'accuracy': 0.795959595959596, 'f1': 0.7940623103060468, 'precision': 0.7980761454158088, 'recall': 0.795959595959596, 'roc_auc': 0.9054897786522239, 'confusion_matrix': array([[127,  49,  41],
-       [ 11, 392,  83],
-       [ 22,  97, 663]])}
-2025-06-15 08:47:48,997 - INFO - Model saved to: models/saved\SVCModel_filtered_features.joblib
-2025-06-15 08:47:48,997 - INFO - Results saved to: results\SVCModel_filtered_features_results.csv
-2025-06-15 08:50:45,406 - INFO - Starting training for RandomForestModel on filtered_features.csv
-2025-06-15 08:50:45,456 - INFO - Loaded dataset with 7515 samples and 52 features
-2025-06-15 08:50:45,463 - INFO - Split data into 635 training files and 159 test files
-2025-06-15 08:57:13,782 - INFO - Obrazek macierzy pomyłek zapisany: results\RandomForestModel_filtered_features_confusion_matrix.png
-2025-06-15 08:57:13,880 - INFO - Training completed for RandomForestModel
-2025-06-15 08:57:13,881 - INFO - Best parameters: {'n_estimators': 500, 'max_depth': 16, 'min_samples_split': 10, 'min_samples_leaf': 1, 'max_features': None, 'bootstrap': True, 'criterion': 'entropy'}
-2025-06-15 08:57:13,881 - INFO - Test metrics: {'accuracy': 0.7616161616161616, 'f1': 0.7594222869578121, 'precision': 0.7602747188809119, 'recall': 0.7616161616161616, 'roc_auc': 0.8983665483385692, 'confusion_matrix': array([[119,  52,  46],
-       [  6, 373, 107],
-       [ 47,  96, 639]])}
-2025-06-15 08:57:13,881 - INFO - Model saved to: models/saved\RandomForestModel_filtered_features.joblib
-2025-06-15 08:57:13,881 - INFO - Results saved to: results\RandomForestModel_filtered_features_results.csv
-2025-06-15 09:00:51,533 - INFO - Starting training for XGBoostModel on filtered_features.csv
-2025-06-15 09:00:51,591 - INFO - Loaded dataset with 7515 samples and 52 features
-2025-06-15 09:00:51,599 - INFO - Split data into 635 training files and 159 test files
-2025-06-15 09:01:00,756 - INFO - Obrazek macierzy pomyłek zapisany: results\XGBoostModel_filtered_features_confusion_matrix.png
-2025-06-15 09:01:00,776 - INFO - Training completed for XGBoostModel
-2025-06-15 09:01:00,776 - INFO - Best parameters: {'n_estimators': 400, 'max_depth': 6, 'learning_rate': 0.030315709166063964, 'subsample': 0.7125456746939529, 'colsample_bytree': 0.832557191156439, 'min_child_weight': 6, 'gamma': 0.6709383902464033, 'reg_alpha': 6.645768779625113, 'reg_lambda': 0.20351714709008842}
-2025-06-15 09:01:00,777 - INFO - Test metrics: {'accuracy': 0.775084175084175, 'f1': 0.7731333195250721, 'precision': 0.7743996490488624, 'recall': 0.775084175084175, 'roc_auc': 0.9107946315059787, 'confusion_matrix': array([[126,  47,  44],
-       [  8, 374, 104],
-       [ 37,  94, 651]])}
-2025-06-15 09:01:00,777 - INFO - Model saved to: models/saved\XGBoostModel_filtered_features.joblib
-2025-06-15 09:01:00,777 - INFO - Results saved to: results\XGBoostModel_filtered_features_results.csv
-2025-06-15 09:01:34,894 - INFO - Starting training for XGBoostModel on filtered_features.csv
-2025-06-15 09:01:34,958 - INFO - Loaded dataset with 7515 samples and 52 features
-2025-06-15 09:01:34,965 - INFO - Split data into 635 training files and 159 test files
-2025-06-15 09:01:34,973 - INFO - Selected 10 best features: ['mfcc_4_mean', 'mfcc_7_std', 'mfcc_8_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_6_min', 'mfcc_9_min', 'mfcc_4_max', 'mfcc_7_max', 'mfcc_8_max']
-2025-06-15 09:01:41,611 - INFO - Obrazek macierzy pomyłek zapisany: results\XGBoostModel_filtered_features_kbest-10_confusion_matrix.png
-2025-06-15 09:01:41,629 - INFO - Training completed for XGBoostModel
-2025-06-15 09:01:41,629 - INFO - Best parameters: {'n_estimators': 400, 'max_depth': 6, 'learning_rate': 0.05100596170578151, 'subsample': 0.6019660974760671, 'colsample_bytree': 0.8833188429662421, 'min_child_weight': 3, 'gamma': 0.5426524236852709, 'reg_alpha': 5.944344549315328, 'reg_lambda': 3.7641820005438738}
-2025-06-15 09:01:41,630 - INFO - Test metrics: {'accuracy': 0.7333333333333333, 'f1': 0.7315000979977762, 'precision': 0.7314066270244732, 'recall': 0.7333333333333333, 'roc_auc': 0.8851724055762894, 'confusion_matrix': array([[106,  61,  50],
-       [ 19, 363, 104],
-       [ 60, 102, 620]])}
-2025-06-15 09:01:41,630 - INFO - Model saved to: models/saved\XGBoostModel_filtered_features_kbest-10.joblib
-2025-06-15 09:01:41,630 - INFO - Results saved to: results\XGBoostModel_filtered_features_kbest-10_results.csv
-2025-06-15 09:02:16,629 - INFO - Starting training for XGBoostModel on filtered_features.csv
-2025-06-15 09:02:16,685 - INFO - Loaded dataset with 7515 samples and 52 features
-2025-06-15 09:02:16,692 - INFO - Split data into 635 training files and 159 test files
-2025-06-15 09:02:16,698 - INFO - Selected 10 best features: ['mfcc_4_mean', 'mfcc_7_std', 'mfcc_8_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_6_min', 'mfcc_9_min', 'mfcc_4_max', 'mfcc_7_max', 'mfcc_8_max']
-2025-06-15 09:02:30,941 - INFO - Obrazek macierzy pomyłek zapisany: results\XGBoostModel_filtered_features_kbest-10_confusion_matrix.png
-2025-06-15 09:02:30,966 - INFO - Training completed for XGBoostModel
-2025-06-15 09:02:30,967 - INFO - Best parameters: {'n_estimators': 500, 'max_depth': 7, 'learning_rate': 0.010200576134928545, 'subsample': 0.6084714477225549, 'colsample_bytree': 0.7179709916291315, 'min_child_weight': 6, 'gamma': 1.3511252003383016, 'reg_alpha': 1.8694675141785722, 'reg_lambda': 0.0013301737114044768}
-2025-06-15 09:02:30,967 - INFO - Test metrics: {'accuracy': 0.7326599326599327, 'f1': 0.7300287666836032, 'precision': 0.7302188134872022, 'recall': 0.7326599326599327, 'roc_auc': 0.8830568958163181, 'confusion_matrix': array([[102,  64,  51],
-       [ 15, 366, 105],
-       [ 58, 104, 620]])}
-2025-06-15 09:02:30,967 - INFO - Model saved to: models/saved\XGBoostModel_filtered_features_kbest-10.joblib
-2025-06-15 09:02:30,967 - INFO - Results saved to: results\XGBoostModel_filtered_features_kbest-10_results.csv
-2025-06-15 09:03:01,556 - INFO - Starting training for SVCModel on filtered_features.csv
-2025-06-15 09:03:01,605 - INFO - Loaded dataset with 7515 samples and 52 features
-2025-06-15 09:03:01,611 - INFO - Split data into 635 training files and 159 test files
-2025-06-15 09:03:01,617 - INFO - Selected 10 best features: ['mfcc_4_mean', 'mfcc_7_std', 'mfcc_8_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_6_min', 'mfcc_9_min', 'mfcc_4_max', 'mfcc_7_max', 'mfcc_8_max']
-2025-06-15 09:04:08,985 - INFO - Obrazek macierzy pomyłek zapisany: results\SVCModel_filtered_features_kbest-10_confusion_matrix.png
-2025-06-15 09:04:08,987 - INFO - Training completed for SVCModel
-2025-06-15 09:04:08,987 - INFO - Best parameters: {'C': 0.015218538809517478, 'kernel': 'sigmoid', 'gamma': 'scale', 'class_weight': 'balanced'}
-2025-06-15 09:04:08,987 - INFO - Test metrics: {'accuracy': 0.7205387205387206, 'f1': 0.727463764648468, 'precision': 0.7595637102855316, 'recall': 0.7205387205387206, 'roc_auc': 0.8637334012457766, 'confusion_matrix': array([[142,  57,  18],
-       [ 45, 398,  43],
-       [104, 148, 530]])}
-2025-06-15 09:04:08,987 - INFO - Model saved to: models/saved\SVCModel_filtered_features_kbest-10.joblib
-2025-06-15 09:04:08,987 - INFO - Results saved to: results\SVCModel_filtered_features_kbest-10_results.csv
-2025-06-15 09:04:47,058 - INFO - Starting training for RandomForestModel on filtered_features.csv
-2025-06-15 09:04:47,107 - INFO - Loaded dataset with 7515 samples and 52 features
-2025-06-15 09:04:47,113 - INFO - Split data into 635 training files and 159 test files
-2025-06-15 09:04:47,119 - INFO - Selected 10 best features: ['mfcc_4_mean', 'mfcc_7_std', 'mfcc_8_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_6_min', 'mfcc_9_min', 'mfcc_4_max', 'mfcc_7_max', 'mfcc_8_max']
-2025-06-15 09:06:31,638 - INFO - Obrazek macierzy pomyłek zapisany: results\RandomForestModel_filtered_features_kbest-10_confusion_matrix.png
-2025-06-15 09:06:31,750 - INFO - Training completed for RandomForestModel
-2025-06-15 09:06:31,751 - INFO - Best parameters: {'n_estimators': 300, 'max_depth': 10, 'min_samples_split': 6, 'min_samples_leaf': 3, 'max_features': 'sqrt', 'bootstrap': True, 'criterion': 'gini'}
-2025-06-15 09:06:31,751 - INFO - Test metrics: {'accuracy': 0.731986531986532, 'f1': 0.7293085772039587, 'precision': 0.7291264652500248, 'recall': 0.731986531986532, 'roc_auc': 0.881717787516854, 'confusion_matrix': array([[103,  62,  52],
-       [ 11, 365, 110],
-       [ 62, 101, 619]])}
-2025-06-15 09:06:31,751 - INFO - Model saved to: models/saved\RandomForestModel_filtered_features_kbest-10.joblib
-2025-06-15 09:06:31,751 - INFO - Results saved to: results\RandomForestModel_filtered_features_kbest-10_results.csv
+2025-06-15 18:30:39,526 - INFO - Error - mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv and ModelType.CATBOOST: 
+All the 5 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+5 fits failed with the following error:
+Traceback (most recent call last):
+  File "C:\Users\Eve\Documents\PK\II_Stopien\Zajecia\Semestr_2\Zaawansowane_metody_uczenia_maszynowego\Projekt2_v2\birds-classification\venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 859, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+  File "C:\Users\Eve\Documents\PK\II_Stopien\Zajecia\Semestr_2\Zaawansowane_metody_uczenia_maszynowego\Projekt2_v2\birds-classification\venv\Lib\site-packages\catboost\core.py", line 5245, in fit
+    self._fit(X, y, cat_features, text_features, embedding_features, None, graph, sample_weight, None, None, None, None, baseline, use_best_model,
+  File "C:\Users\Eve\Documents\PK\II_Stopien\Zajecia\Semestr_2\Zaawansowane_metody_uczenia_maszynowego\Projekt2_v2\birds-classification\venv\Lib\site-packages\catboost\core.py", line 2395, in _fit
+    train_params = self._prepare_train_params(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Eve\Documents\PK\II_Stopien\Zajecia\Semestr_2\Zaawansowane_metody_uczenia_maszynowego\Projekt2_v2\birds-classification\venv\Lib\site-packages\catboost\core.py", line 2321, in _prepare_train_params
+    _check_train_params(params)
+  File "_catboost.pyx", line 6601, in _catboost._check_train_params
+  File "_catboost.pyx", line 6623, in _catboost._check_train_params
+_catboost.CatBoostError: catboost/private/libs/options/bootstrap_options.cpp:44: Error: bagging temperature available for bayesian bootstrap only
+
+2025-06-15 18:30:39,526 - INFO - Starting training for RandomForestModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 18:30:39,580 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 18:30:39,590 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 18:30:39,599 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 18:35:27,714 - INFO - Training on file: data_generation\data\mfcc\butter\savgol\mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 18:35:27,714 - INFO - Starting training for XGBoostModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 18:35:27,769 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 18:35:27,776 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 18:35:27,784 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 18:35:32,066 - INFO - Confucion-matrix img saved: results\XGBoostModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_confusion_matrix.png
+2025-06-15 18:35:32,074 - INFO - Training completed for XGBoostModel
+2025-06-15 18:35:32,075 - INFO - Best parameters: {'n_estimators': 200, 'max_depth': 8, 'learning_rate': 0.02982332626341049, 'subsample': 0.6150288322712941, 'colsample_bytree': 0.6439505826366698, 'min_child_weight': 7, 'gamma': 0.8023820382322934, 'reg_alpha': 6.158545918800395, 'reg_lambda': 6.312219340563603}
+2025-06-15 18:35:32,075 - INFO - Test metrics: {'accuracy': 0.7178451178451178, 'f1': 0.7127803332937394, 'precision': 0.7129292266403783, 'recall': 0.7178451178451178, 'roc_auc': 0.8581186885243557, 'confusion_matrix': array([[ 84,  79,  54],
+       [ 20, 360, 106],
+       [ 52, 108, 622]])}
+2025-06-15 18:35:32,075 - INFO - Model saved to: models/saved\XGBoostModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10.joblib
+2025-06-15 18:35:32,075 - INFO - Results saved to: results\XGBoostModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_results.csv
+2025-06-15 18:35:32,077 - INFO - Starting training for SVCModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 18:35:32,137 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 18:35:32,144 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 18:35:32,152 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 18:35:49,736 - INFO - Confucion-matrix img saved: results\SVCModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_confusion_matrix.png
+2025-06-15 18:35:49,737 - INFO - Training completed for SVCModel
+2025-06-15 18:35:49,737 - INFO - Best parameters: {'C': 1.0, 'kernel': 'rbf', 'gamma': 'scale', 'class_weight': None}
+2025-06-15 18:35:49,738 - INFO - Test metrics: {'accuracy': 0.7212121212121212, 'f1': 0.7121517082402087, 'precision': 0.7307512885216485, 'recall': 0.7212121212121212, 'roc_auc': 0.8465492242953333, 'confusion_matrix': array([[ 70,  96,  51],
+       [ 13, 379,  94],
+       [ 16, 144, 622]])}
+2025-06-15 18:35:49,738 - INFO - Model saved to: models/saved\SVCModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10.joblib
+2025-06-15 18:35:49,738 - INFO - Results saved to: results\SVCModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_results.csv
+2025-06-15 18:35:49,738 - INFO - Starting training for CatBoostModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 18:35:49,794 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 18:35:49,800 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 18:35:49,806 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 18:35:49,890 - ERROR - Error during model training: CategoricalDistribution does not support dynamic value space.
+2025-06-15 18:35:49,890 - INFO - Error - mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv and ModelType.CATBOOST: CategoricalDistribution does not support dynamic value space.
+2025-06-15 18:35:49,890 - INFO - Starting training for RandomForestModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 18:35:49,950 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 18:35:49,957 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 18:35:49,964 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 18:36:48,267 - INFO - Confucion-matrix img saved: results\RandomForestModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_confusion_matrix.png
+2025-06-15 18:36:48,284 - INFO - Training completed for RandomForestModel
+2025-06-15 18:36:48,284 - INFO - Best parameters: {'n_estimators': 100, 'max_depth': 10, 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_features': 'sqrt', 'bootstrap': True, 'criterion': 'gini'}
+2025-06-15 18:36:48,284 - INFO - Test metrics: {'accuracy': 0.7164983164983165, 'f1': 0.7103271984633586, 'precision': 0.7149953243392576, 'recall': 0.7164983164983165, 'roc_auc': 0.8567977911829566, 'confusion_matrix': array([[ 81,  83,  53],
+       [ 19, 361, 106],
+       [ 34, 126, 622]])}
+2025-06-15 18:36:48,284 - INFO - Model saved to: models/saved\RandomForestModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10.joblib
+2025-06-15 18:36:48,284 - INFO - Results saved to: results\RandomForestModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_results.csv
+2025-06-15 18:38:44,622 - INFO - Training on file: data_generation\data\mfcc\butter\savgol\mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 18:38:44,622 - INFO - Starting training for XGBoostModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 18:38:44,671 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 18:38:44,677 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 18:38:44,683 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 18:38:49,306 - INFO - Confucion-matrix img saved: results\XGBoostModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_confusion_matrix.png
+2025-06-15 18:38:49,315 - INFO - Training completed for XGBoostModel
+2025-06-15 18:38:49,315 - INFO - Best parameters: {'n_estimators': 200, 'max_depth': 8, 'learning_rate': 0.02982332626341049, 'subsample': 0.6150288322712941, 'colsample_bytree': 0.6439505826366698, 'min_child_weight': 7, 'gamma': 0.8023820382322934, 'reg_alpha': 6.158545918800395, 'reg_lambda': 6.312219340563603}
+2025-06-15 18:38:49,315 - INFO - Test metrics: {'accuracy': 0.7178451178451178, 'f1': 0.7127803332937394, 'precision': 0.7129292266403783, 'recall': 0.7178451178451178, 'roc_auc': 0.8581186885243557, 'confusion_matrix': array([[ 84,  79,  54],
+       [ 20, 360, 106],
+       [ 52, 108, 622]])}
+2025-06-15 18:38:49,315 - INFO - Model saved to: models/saved\XGBoostModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10.joblib
+2025-06-15 18:38:49,315 - INFO - Results saved to: results\XGBoostModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_results.csv
+2025-06-15 18:38:49,316 - INFO - Starting training for SVCModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 18:38:49,375 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 18:38:49,383 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 18:38:49,390 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 18:39:18,690 - INFO - Confucion-matrix img saved: results\SVCModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_confusion_matrix.png
+2025-06-15 18:39:18,692 - INFO - Training completed for SVCModel
+2025-06-15 18:39:18,692 - INFO - Best parameters: {'C': 1.0, 'kernel': 'rbf', 'gamma': 'scale', 'class_weight': None}
+2025-06-15 18:39:18,692 - INFO - Test metrics: {'accuracy': 0.7212121212121212, 'f1': 0.7121517082402087, 'precision': 0.7307512885216485, 'recall': 0.7212121212121212, 'roc_auc': 0.8465492242953333, 'confusion_matrix': array([[ 70,  96,  51],
+       [ 13, 379,  94],
+       [ 16, 144, 622]])}
+2025-06-15 18:39:18,692 - INFO - Model saved to: models/saved\SVCModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10.joblib
+2025-06-15 18:39:18,692 - INFO - Results saved to: results\SVCModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_results.csv
+2025-06-15 18:39:18,693 - INFO - Starting training for CatBoostModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 18:39:18,747 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 18:39:18,752 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 18:39:18,759 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 18:39:18,854 - ERROR - Error during model training: Cannot set different log configuration to the same parameter name.
+2025-06-15 18:39:18,854 - INFO - Error - mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv and ModelType.CATBOOST: Cannot set different log configuration to the same parameter name.
+2025-06-15 18:39:18,854 - INFO - Starting training for RandomForestModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 18:39:18,917 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 18:39:18,926 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 18:39:18,937 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 18:40:30,541 - INFO - Confucion-matrix img saved: results\RandomForestModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_confusion_matrix.png
+2025-06-15 18:40:30,561 - INFO - Training completed for RandomForestModel
+2025-06-15 18:40:30,561 - INFO - Best parameters: {'n_estimators': 100, 'max_depth': 10, 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_features': 'sqrt', 'bootstrap': True, 'criterion': 'gini'}
+2025-06-15 18:40:30,561 - INFO - Test metrics: {'accuracy': 0.7164983164983165, 'f1': 0.7103271984633586, 'precision': 0.7149953243392576, 'recall': 0.7164983164983165, 'roc_auc': 0.8567977911829566, 'confusion_matrix': array([[ 81,  83,  53],
+       [ 19, 361, 106],
+       [ 34, 126, 622]])}
+2025-06-15 18:40:30,561 - INFO - Model saved to: models/saved\RandomForestModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10.joblib
+2025-06-15 18:40:30,561 - INFO - Results saved to: results\RandomForestModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_results.csv
+2025-06-15 18:42:08,458 - INFO - Training on file: data_generation\data\mfcc\butter\savgol\mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 18:42:08,458 - INFO - Starting training for XGBoostModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 18:42:08,511 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 18:42:08,520 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 18:42:08,528 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 18:42:15,295 - INFO - Confucion-matrix img saved: results\XGBoostModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_confusion_matrix.png
+2025-06-15 18:42:15,304 - INFO - Training completed for XGBoostModel
+2025-06-15 18:42:15,305 - INFO - Best parameters: {'n_estimators': 300, 'max_depth': 7, 'learning_rate': 0.034978607325631725, 'subsample': 0.6029773775507327, 'colsample_bytree': 0.8413099405614355, 'min_child_weight': 6, 'gamma': 3.2245173052444525, 'reg_alpha': 3.257857596828702, 'reg_lambda': 3.366286437579215}
+2025-06-15 18:42:15,305 - INFO - Test metrics: {'accuracy': 0.7198653198653199, 'f1': 0.7152549399357909, 'precision': 0.7158295289722079, 'recall': 0.7198653198653199, 'roc_auc': 0.8590203808727246, 'confusion_matrix': array([[ 84,  82,  51],
+       [ 22, 364, 100],
+       [ 53, 108, 621]])}
+2025-06-15 18:42:15,305 - INFO - Model saved to: models/saved\XGBoostModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10.joblib
+2025-06-15 18:42:15,305 - INFO - Results saved to: results\XGBoostModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_results.csv
+2025-06-15 18:42:15,306 - INFO - Starting training for SVCModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 18:42:15,366 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 18:42:15,373 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 18:42:15,381 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 18:42:46,443 - INFO - Confucion-matrix img saved: results\SVCModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_confusion_matrix.png
+2025-06-15 18:42:46,444 - INFO - Training completed for SVCModel
+2025-06-15 18:42:46,444 - INFO - Best parameters: {'C': 1.0, 'kernel': 'rbf', 'gamma': 'scale', 'class_weight': None}
+2025-06-15 18:42:46,445 - INFO - Test metrics: {'accuracy': 0.7212121212121212, 'f1': 0.7121517082402087, 'precision': 0.7307512885216485, 'recall': 0.7212121212121212, 'roc_auc': 0.8465492242953333, 'confusion_matrix': array([[ 70,  96,  51],
+       [ 13, 379,  94],
+       [ 16, 144, 622]])}
+2025-06-15 18:42:46,445 - INFO - Model saved to: models/saved\SVCModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10.joblib
+2025-06-15 18:42:46,445 - INFO - Results saved to: results\SVCModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_results.csv
+2025-06-15 18:42:46,445 - INFO - Starting training for CatBoostModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 18:42:46,495 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 18:42:46,501 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 18:42:46,508 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 18:43:12,613 - INFO - Confucion-matrix img saved: results\CatBoostModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_confusion_matrix.png
+2025-06-15 18:43:12,617 - INFO - Training completed for CatBoostModel
+2025-06-15 18:43:12,618 - INFO - Best parameters: {'bootstrap_type': 'Bernoulli', 'iterations': 500, 'depth': 6, 'learning_rate': 0.012182462993132631, 'l2_leaf_reg': 0.6810303507633315, 'random_strength': 9.837173858471333, 'od_type': 'Iter', 'od_wait': 20}
+2025-06-15 18:43:12,618 - INFO - Test metrics: {'accuracy': 0.7265993265993266, 'f1': 0.720574689909305, 'precision': 0.7241209720170371, 'recall': 0.7265993265993266, 'roc_auc': 0.8615719154302732, 'confusion_matrix': array([[ 81,  84,  52],
+       [ 19, 374,  93],
+       [ 41, 117, 624]])}
+2025-06-15 18:43:12,618 - INFO - Model saved to: models/saved\CatBoostModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10.joblib
+2025-06-15 18:43:12,618 - INFO - Results saved to: results\CatBoostModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_results.csv
+2025-06-15 18:43:12,620 - INFO - Starting training for RandomForestModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 18:43:12,690 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 18:43:12,696 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 18:43:12,704 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 18:44:34,570 - INFO - Confucion-matrix img saved: results\RandomForestModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_confusion_matrix.png
+2025-06-15 18:44:34,592 - INFO - Training completed for RandomForestModel
+2025-06-15 18:44:34,592 - INFO - Best parameters: {'n_estimators': 100, 'max_depth': 10, 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_features': 'sqrt', 'bootstrap': True, 'criterion': 'gini'}
+2025-06-15 18:44:34,592 - INFO - Test metrics: {'accuracy': 0.7164983164983165, 'f1': 0.7103271984633586, 'precision': 0.7149953243392576, 'recall': 0.7164983164983165, 'roc_auc': 0.8567977911829566, 'confusion_matrix': array([[ 81,  83,  53],
+       [ 19, 361, 106],
+       [ 34, 126, 622]])}
+2025-06-15 18:44:34,593 - INFO - Model saved to: models/saved\RandomForestModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10.joblib
+2025-06-15 18:44:34,593 - INFO - Results saved to: results\RandomForestModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_results.csv
+2025-06-15 19:00:20,731 - INFO - Training on file: data_generation\data\mfcc\butter\savgol\mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 19:00:20,731 - INFO - Starting training for XGBoostModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 19:00:20,789 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 19:00:20,795 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 19:00:20,800 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 19:00:31,453 - INFO - Training on file: data_generation\data\mfcc\butter\savgol\mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 19:00:31,453 - INFO - Starting training for XGBoostModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 19:00:31,504 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 19:00:31,509 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 19:00:31,516 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 19:00:35,472 - INFO - Confucion-matrix img saved: results\XGBoostModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_confusion_matrix.png
+2025-06-15 19:00:35,487 - INFO - Training completed for XGBoostModel
+2025-06-15 19:00:35,487 - INFO - Best parameters: {'n_estimators': 300, 'max_depth': 7, 'learning_rate': 0.034978607325631725, 'subsample': 0.6029773775507327, 'colsample_bytree': 0.8413099405614355, 'min_child_weight': 6, 'gamma': 3.2245173052444525, 'reg_alpha': 3.257857596828702, 'reg_lambda': 3.366286437579215}
+2025-06-15 19:00:35,488 - INFO - Test metrics: {'accuracy': 0.7198653198653199, 'f1': 0.7152549399357909, 'precision': 0.7158295289722079, 'recall': 0.7198653198653199, 'roc_auc': 0.8590203808727246, 'confusion_matrix': array([[ 84,  82,  51],
+       [ 22, 364, 100],
+       [ 53, 108, 621]])}
+2025-06-15 19:00:35,488 - INFO - Model saved to: models/saved\XGBoostModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10.joblib
+2025-06-15 19:00:35,488 - INFO - Results saved to: results\XGBoostModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_results.csv
+2025-06-15 19:00:35,489 - INFO - Starting training for SVCModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 19:00:35,558 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 19:00:35,566 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 19:00:35,575 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 19:00:53,134 - INFO - Confucion-matrix img saved: results\SVCModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_confusion_matrix.png
+2025-06-15 19:00:53,135 - INFO - Training completed for SVCModel
+2025-06-15 19:00:53,136 - INFO - Best parameters: {'C': 1.0, 'kernel': 'rbf', 'gamma': 'scale', 'class_weight': None}
+2025-06-15 19:00:53,136 - INFO - Test metrics: {'accuracy': 0.7212121212121212, 'f1': 0.7121517082402087, 'precision': 0.7307512885216485, 'recall': 0.7212121212121212, 'roc_auc': 0.8465492242953333, 'confusion_matrix': array([[ 70,  96,  51],
+       [ 13, 379,  94],
+       [ 16, 144, 622]])}
+2025-06-15 19:00:53,136 - INFO - Model saved to: models/saved\SVCModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10.joblib
+2025-06-15 19:00:53,136 - INFO - Results saved to: results\SVCModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_results.csv
+2025-06-15 19:00:53,136 - INFO - Starting training for CatBoostModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 19:00:53,197 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 19:00:53,203 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 19:00:53,209 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 19:01:35,321 - INFO - Confucion-matrix img saved: results\CatBoostModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_confusion_matrix.png
+2025-06-15 19:01:35,324 - INFO - Training completed for CatBoostModel
+2025-06-15 19:01:35,324 - INFO - Best parameters: {'bootstrap_type': 'Bernoulli', 'iterations': 500, 'depth': 6, 'learning_rate': 0.012182462993132631, 'l2_leaf_reg': 0.6810303507633315, 'random_strength': 9.837173858471333, 'od_type': 'Iter', 'od_wait': 20}
+2025-06-15 19:01:35,324 - INFO - Test metrics: {'accuracy': 0.7265993265993266, 'f1': 0.720574689909305, 'precision': 0.7241209720170371, 'recall': 0.7265993265993266, 'roc_auc': 0.8615719154302732, 'confusion_matrix': array([[ 81,  84,  52],
+       [ 19, 374,  93],
+       [ 41, 117, 624]])}
+2025-06-15 19:01:35,324 - INFO - Model saved to: models/saved\CatBoostModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10.joblib
+2025-06-15 19:01:35,324 - INFO - Results saved to: results\CatBoostModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_results.csv
+2025-06-15 19:01:35,324 - INFO - Starting training for RandomForestModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 19:01:35,401 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 19:01:35,411 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 19:01:35,421 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 19:02:23,820 - INFO - Confucion-matrix img saved: results\RandomForestModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_confusion_matrix.png
+2025-06-15 19:02:23,840 - INFO - Training completed for RandomForestModel
+2025-06-15 19:02:23,840 - INFO - Best parameters: {'n_estimators': 100, 'max_depth': 10, 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_features': 'sqrt', 'bootstrap': True, 'criterion': 'gini'}
+2025-06-15 19:02:23,840 - INFO - Test metrics: {'accuracy': 0.7164983164983165, 'f1': 0.7103271984633586, 'precision': 0.7149953243392576, 'recall': 0.7164983164983165, 'roc_auc': 0.8567977911829566, 'confusion_matrix': array([[ 81,  83,  53],
+       [ 19, 361, 106],
+       [ 34, 126, 622]])}
+2025-06-15 19:02:23,840 - INFO - Model saved to: models/saved\RandomForestModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10.joblib
+2025-06-15 19:02:23,840 - INFO - Results saved to: results\RandomForestModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_results.csv
+2025-06-15 19:02:23,841 - INFO - Starting training for LogisticRegressionModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 19:02:23,894 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 19:02:23,900 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 19:02:23,907 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 19:02:24,533 - INFO - Confucion-matrix img saved: results\LogisticRegressionModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_confusion_matrix.png
+2025-06-15 19:02:24,534 - INFO - Training completed for LogisticRegressionModel
+2025-06-15 19:02:24,534 - INFO - Best parameters: {'solver': 'liblinear', 'penalty': 'l1', 'class_weight': None, 'C': 5.125603243955594, 'max_iter': 1400}
+2025-06-15 19:02:24,534 - INFO - Test metrics: {'accuracy': 0.7198653198653199, 'f1': 0.7157741194905743, 'precision': 0.7188579316596557, 'recall': 0.7198653198653199, 'roc_auc': 0.859885500692961, 'confusion_matrix': array([[ 81, 107,  29],
+       [ 19, 365, 102],
+       [ 55, 104, 623]])}
+2025-06-15 19:02:24,534 - INFO - Model saved to: models/saved\LogisticRegressionModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10.joblib
+2025-06-15 19:02:24,534 - INFO - Results saved to: results\LogisticRegressionModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_results.csv
+2025-06-15 19:02:24,534 - INFO - Starting training for GaussianNBModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 19:02:24,592 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 19:02:24,597 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 19:02:24,605 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 19:02:24,962 - INFO - Confucion-matrix img saved: results\GaussianNBModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_confusion_matrix.png
+2025-06-15 19:02:24,963 - INFO - Training completed for GaussianNBModel
+2025-06-15 19:02:24,963 - INFO - Best parameters: {'var_smoothing': 1e-09}
+2025-06-15 19:02:24,964 - INFO - Test metrics: {'accuracy': 0.6861952861952862, 'f1': 0.6820238000218072, 'precision': 0.7251044791884333, 'recall': 0.6861952861952862, 'roc_auc': 0.8513268739211268, 'confusion_matrix': array([[ 66, 127,  24],
+       [ 13, 416,  57],
+       [ 31, 214, 537]])}
+2025-06-15 19:02:24,964 - INFO - Model saved to: models/saved\GaussianNBModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10.joblib
+2025-06-15 19:02:24,964 - INFO - Results saved to: results\GaussianNBModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_results.csv
+2025-06-15 19:02:24,964 - INFO - Starting training for QuadraticDiscriminantAnalysisModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 19:02:25,019 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 19:02:25,025 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 19:02:25,031 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 19:02:25,122 - ERROR - Error during model training: 'QuadraticDiscriminantAnalysisModel' object has no attribute 'get_optuna_params'
+2025-06-15 19:02:25,122 - INFO - Error - mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv and ModelType.QDA: 'QuadraticDiscriminantAnalysisModel' object has no attribute 'get_optuna_params'
+2025-06-15 19:02:25,122 - INFO - Starting training for VotingModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 19:02:25,184 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 19:02:25,191 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 19:02:25,197 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 19:02:25,286 - ERROR - Error during model training: 'VotingModel' object has no attribute 'get_optuna_params'
+2025-06-15 19:02:25,286 - INFO - Error - mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv and ModelType.VOTING: 'VotingModel' object has no attribute 'get_optuna_params'
+2025-06-15 19:02:25,286 - INFO - Starting training for StackingModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 19:02:25,365 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 19:02:25,372 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 19:02:25,381 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 19:02:25,454 - ERROR - Error during model training: 'StackingModel' object has no attribute 'get_optuna_params'
+2025-06-15 19:02:25,454 - INFO - Error - mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv and ModelType.STACKING: 'StackingModel' object has no attribute 'get_optuna_params'
+2025-06-15 19:09:14,640 - INFO - Training on file: data_generation\data\mfcc\butter\savgol\mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 19:09:14,640 - INFO - Starting training for VotingModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 19:09:14,703 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 19:09:14,712 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 19:09:14,720 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 19:09:20,068 - ERROR - Error during model training: VotingClassifier.__init__() got an unexpected keyword argument 'weight_lr'
+2025-06-15 19:09:20,068 - INFO - Error - mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv and ModelType.VOTING: VotingClassifier.__init__() got an unexpected keyword argument 'weight_lr'
+2025-06-15 19:09:20,069 - INFO - Starting training for StackingModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 19:09:20,118 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 19:09:20,123 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 19:09:20,129 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 19:09:31,257 - ERROR - Error during model training: StackingClassifier.__init__() got an unexpected keyword argument 'lr_C'
+2025-06-15 19:09:31,257 - INFO - Error - mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv and ModelType.STACKING: StackingClassifier.__init__() got an unexpected keyword argument 'lr_C'
+2025-06-15 19:09:31,257 - INFO - Starting training for QuadraticDiscriminantAnalysisModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 19:09:31,307 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 19:09:31,313 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 19:09:31,319 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 19:09:31,610 - INFO - Confucion-matrix img saved: results\QuadraticDiscriminantAnalysisModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_confusion_matrix.png
+2025-06-15 19:09:31,611 - INFO - Training completed for QuadraticDiscriminantAnalysisModel
+2025-06-15 19:09:31,611 - INFO - Best parameters: {'reg_param': 0.00850033615738044}
+2025-06-15 19:09:31,611 - INFO - Test metrics: {'accuracy': 0.6882154882154882, 'f1': 0.6858355566637616, 'precision': 0.7203753472998345, 'recall': 0.6882154882154882, 'roc_auc': 0.8558917385569541, 'confusion_matrix': array([[ 70, 127,  20],
+       [ 19, 399,  68],
+       [ 30, 199, 553]])}
+2025-06-15 19:09:31,612 - INFO - Model saved to: models/saved\QuadraticDiscriminantAnalysisModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10.joblib
+2025-06-15 19:09:31,612 - INFO - Results saved to: results\QuadraticDiscriminantAnalysisModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_results.csv
+2025-06-15 19:11:49,754 - INFO - Training on file: data_generation\data\mfcc\butter\savgol\mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 19:11:49,754 - INFO - Starting training for VotingModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 19:11:49,817 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 19:11:49,824 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 19:11:49,833 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 19:11:50,865 - INFO - Confucion-matrix img saved: results\VotingModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_confusion_matrix.png
+2025-06-15 19:11:50,867 - INFO - Training completed for VotingModel
+2025-06-15 19:11:50,867 - INFO - Best parameters: {'voting': 'soft', 'weight_lr': 1.4096194444269325, 'weight_gnb': 0.7535540431148862, 'weight_qda': 1.0654265527418452, 'lr_C': 6.219757186763312, 'gnb_var_smoothing': 8.202339445122627e-10, 'qda_reg_param': 0.6743430029619552}
+2025-06-15 19:11:50,868 - INFO - Test metrics: {'accuracy': 0.7023569023569024, 'f1': 0.6980345075896195, 'precision': 0.731479656834114, 'recall': 0.7023569023569024, 'roc_auc': 0.866528174691327, 'confusion_matrix': array([[ 69, 126,  22],
+       [ 12, 408,  66],
+       [ 31, 185, 566]])}
+2025-06-15 19:11:50,868 - INFO - Model saved to: models/saved\VotingModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10.joblib
+2025-06-15 19:11:50,868 - INFO - Results saved to: results\VotingModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_results.csv
+2025-06-15 19:11:50,868 - INFO - Starting training for StackingModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 19:11:50,926 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 19:11:50,934 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 19:11:50,943 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 19:12:04,866 - INFO - Confucion-matrix img saved: results\StackingModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_confusion_matrix.png
+2025-06-15 19:12:04,890 - INFO - Training completed for StackingModel
+2025-06-15 19:12:04,890 - INFO - Best parameters: {'cv': 4, 'lr_C': 4.8662948353900655, 'gnb_var_smoothing': 2.8197469852025077e-10, 'qda_reg_param': 0.9671840465067324, 'rf_n_estimators': 116, 'rf_max_depth': 7, 'rf_min_samples_split': 5, 'rf_min_samples_leaf': 4}
+2025-06-15 19:12:04,890 - INFO - Test metrics: {'accuracy': 0.705050505050505, 'f1': 0.701360110414136, 'precision': 0.7044383576147695, 'recall': 0.705050505050505, 'roc_auc': 0.8556882863909631, 'confusion_matrix': array([[ 79, 104,  34],
+       [ 28, 353, 105],
+       [ 49, 118, 615]])}
+2025-06-15 19:12:04,890 - INFO - Model saved to: models/saved\StackingModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10.joblib
+2025-06-15 19:12:04,890 - INFO - Results saved to: results\StackingModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_results.csv
+2025-06-15 19:12:04,892 - INFO - Starting training for QuadraticDiscriminantAnalysisModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 19:12:04,946 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 19:12:04,952 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 19:12:04,958 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 19:12:05,243 - INFO - Confucion-matrix img saved: results\QuadraticDiscriminantAnalysisModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_confusion_matrix.png
+2025-06-15 19:12:05,245 - INFO - Training completed for QuadraticDiscriminantAnalysisModel
+2025-06-15 19:12:05,245 - INFO - Best parameters: {'reg_param': 0.00850033615738044}
+2025-06-15 19:12:05,245 - INFO - Test metrics: {'accuracy': 0.6882154882154882, 'f1': 0.6858355566637616, 'precision': 0.7203753472998345, 'recall': 0.6882154882154882, 'roc_auc': 0.8558917385569541, 'confusion_matrix': array([[ 70, 127,  20],
+       [ 19, 399,  68],
+       [ 30, 199, 553]])}
+2025-06-15 19:12:05,245 - INFO - Model saved to: models/saved\QuadraticDiscriminantAnalysisModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10.joblib
+2025-06-15 19:12:05,245 - INFO - Results saved to: results\QuadraticDiscriminantAnalysisModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_results.csv
+2025-06-15 19:15:33,173 - INFO - Training on file: data_generation\data\mfcc\butter\savgol\mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 19:15:33,173 - INFO - Starting training for XGBoostModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 19:15:33,236 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 19:15:33,244 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 19:15:33,252 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 19:15:36,153 - INFO - Confucion-matrix img saved: results\XGBoostModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_confusion_matrix.png
+2025-06-15 19:15:36,164 - INFO - Training completed for XGBoostModel
+2025-06-15 19:15:36,164 - INFO - Best parameters: {'n_estimators': 300, 'max_depth': 7, 'learning_rate': 0.034978607325631725, 'subsample': 0.6029773775507327, 'colsample_bytree': 0.8413099405614355, 'min_child_weight': 6, 'gamma': 3.2245173052444525, 'reg_alpha': 3.257857596828702, 'reg_lambda': 3.366286437579215}
+2025-06-15 19:15:36,164 - INFO - Test metrics: {'accuracy': 0.7198653198653199, 'f1': 0.7152549399357909, 'precision': 0.7158295289722079, 'recall': 0.7198653198653199, 'roc_auc': 0.8590203808727246, 'confusion_matrix': array([[ 84,  82,  51],
+       [ 22, 364, 100],
+       [ 53, 108, 621]])}
+2025-06-15 19:15:36,164 - INFO - Model saved to: models/saved\XGBoostModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10.joblib
+2025-06-15 19:15:36,164 - INFO - Results saved to: results\XGBoostModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_results.csv
+2025-06-15 19:15:36,166 - INFO - Starting training for SVCModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 19:15:36,227 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 19:15:36,234 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 19:15:36,242 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 19:15:56,276 - INFO - Confucion-matrix img saved: results\SVCModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_confusion_matrix.png
+2025-06-15 19:15:56,278 - INFO - Training completed for SVCModel
+2025-06-15 19:15:56,278 - INFO - Best parameters: {'C': 1.0, 'kernel': 'rbf', 'gamma': 'scale', 'class_weight': None}
+2025-06-15 19:15:56,278 - INFO - Test metrics: {'accuracy': 0.7212121212121212, 'f1': 0.7121517082402087, 'precision': 0.7307512885216485, 'recall': 0.7212121212121212, 'roc_auc': 0.8465492242953333, 'confusion_matrix': array([[ 70,  96,  51],
+       [ 13, 379,  94],
+       [ 16, 144, 622]])}
+2025-06-15 19:15:56,278 - INFO - Model saved to: models/saved\SVCModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10.joblib
+2025-06-15 19:15:56,278 - INFO - Results saved to: results\SVCModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_results.csv
+2025-06-15 19:15:56,278 - INFO - Starting training for CatBoostModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 19:15:56,341 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 19:15:56,347 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 19:15:56,355 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 19:16:23,965 - INFO - Confucion-matrix img saved: results\CatBoostModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_confusion_matrix.png
+2025-06-15 19:16:23,970 - INFO - Training completed for CatBoostModel
+2025-06-15 19:16:23,970 - INFO - Best parameters: {'bootstrap_type': 'Bernoulli', 'iterations': 500, 'depth': 6, 'learning_rate': 0.012182462993132631, 'l2_leaf_reg': 0.6810303507633315, 'random_strength': 9.837173858471333, 'od_type': 'Iter', 'od_wait': 20}
+2025-06-15 19:16:23,970 - INFO - Test metrics: {'accuracy': 0.7265993265993266, 'f1': 0.720574689909305, 'precision': 0.7241209720170371, 'recall': 0.7265993265993266, 'roc_auc': 0.8615719154302732, 'confusion_matrix': array([[ 81,  84,  52],
+       [ 19, 374,  93],
+       [ 41, 117, 624]])}
+2025-06-15 19:16:23,971 - INFO - Model saved to: models/saved\CatBoostModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10.joblib
+2025-06-15 19:16:23,971 - INFO - Results saved to: results\CatBoostModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_results.csv
+2025-06-15 19:16:23,971 - INFO - Starting training for RandomForestModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 19:16:24,031 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 19:16:24,037 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 19:16:24,044 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 19:16:40,023 - INFO - Confucion-matrix img saved: results\RandomForestModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_confusion_matrix.png
+2025-06-15 19:16:40,041 - INFO - Training completed for RandomForestModel
+2025-06-15 19:16:40,042 - INFO - Best parameters: {'n_estimators': 100, 'max_depth': 10, 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_features': 'sqrt', 'bootstrap': True, 'criterion': 'gini'}
+2025-06-15 19:16:40,042 - INFO - Test metrics: {'accuracy': 0.7164983164983165, 'f1': 0.7103271984633586, 'precision': 0.7149953243392576, 'recall': 0.7164983164983165, 'roc_auc': 0.8567977911829566, 'confusion_matrix': array([[ 81,  83,  53],
+       [ 19, 361, 106],
+       [ 34, 126, 622]])}
+2025-06-15 19:16:40,042 - INFO - Model saved to: models/saved\RandomForestModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10.joblib
+2025-06-15 19:16:40,042 - INFO - Results saved to: results\RandomForestModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_results.csv
+2025-06-15 19:16:40,043 - INFO - Starting training for LogisticRegressionModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 19:16:40,100 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 19:16:40,106 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 19:16:40,112 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 19:16:40,186 - ERROR - Error during model training: CategoricalDistribution does not support dynamic value space.
+2025-06-15 19:16:40,186 - INFO - Error - mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv and ModelType.LOGISTIC_REGRESSION: CategoricalDistribution does not support dynamic value space.
+2025-06-15 19:16:40,187 - INFO - Starting training for GaussianNBModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 19:16:40,243 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 19:16:40,252 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 19:16:40,262 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 19:16:40,622 - INFO - Confucion-matrix img saved: results\GaussianNBModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_confusion_matrix.png
+2025-06-15 19:16:40,623 - INFO - Training completed for GaussianNBModel
+2025-06-15 19:16:40,623 - INFO - Best parameters: {'var_smoothing': 1e-09}
+2025-06-15 19:16:40,623 - INFO - Test metrics: {'accuracy': 0.6861952861952862, 'f1': 0.6820238000218072, 'precision': 0.7251044791884333, 'recall': 0.6861952861952862, 'roc_auc': 0.8513268739211268, 'confusion_matrix': array([[ 66, 127,  24],
+       [ 13, 416,  57],
+       [ 31, 214, 537]])}
+2025-06-15 19:16:40,623 - INFO - Model saved to: models/saved\GaussianNBModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10.joblib
+2025-06-15 19:16:40,623 - INFO - Results saved to: results\GaussianNBModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_results.csv
+2025-06-15 19:16:40,623 - INFO - Starting training for QuadraticDiscriminantAnalysisModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 19:16:40,677 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 19:16:40,687 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 19:16:40,699 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 19:16:40,998 - INFO - Confucion-matrix img saved: results\QuadraticDiscriminantAnalysisModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_confusion_matrix.png
+2025-06-15 19:16:40,999 - INFO - Training completed for QuadraticDiscriminantAnalysisModel
+2025-06-15 19:16:40,999 - INFO - Best parameters: {'reg_param': 0.4304863265548665}
+2025-06-15 19:16:41,000 - INFO - Test metrics: {'accuracy': 0.694949494949495, 'f1': 0.6892545796570564, 'precision': 0.74353500854345, 'recall': 0.694949494949495, 'roc_auc': 0.8697648250627261, 'confusion_matrix': array([[ 63, 135,  19],
+       [  4, 423,  59],
+       [ 22, 214, 546]])}
+2025-06-15 19:16:41,000 - INFO - Model saved to: models/saved\QuadraticDiscriminantAnalysisModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10.joblib
+2025-06-15 19:16:41,000 - INFO - Results saved to: results\QuadraticDiscriminantAnalysisModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_results.csv
+2025-06-15 19:16:41,000 - INFO - Starting training for VotingModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 19:16:41,054 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 19:16:41,061 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 19:16:41,068 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 19:16:41,792 - INFO - Confucion-matrix img saved: results\VotingModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_confusion_matrix.png
+2025-06-15 19:16:41,795 - INFO - Training completed for VotingModel
+2025-06-15 19:16:41,795 - INFO - Best parameters: {'voting': 'soft', 'weight_lr': 1.3579392959720749, 'weight_gnb': 0.7162892165272181, 'weight_qda': 0.6225274647807693, 'lr_C': 2.8403049632757966, 'gnb_var_smoothing': 1.440864597825577e-09, 'qda_reg_param': 0.6972404427100473}
+2025-06-15 19:16:41,795 - INFO - Test metrics: {'accuracy': 0.7023569023569024, 'f1': 0.6980345075896195, 'precision': 0.731479656834114, 'recall': 0.7023569023569024, 'roc_auc': 0.866528174691327, 'confusion_matrix': array([[ 69, 126,  22],
+       [ 12, 408,  66],
+       [ 31, 185, 566]])}
+2025-06-15 19:16:41,795 - INFO - Model saved to: models/saved\VotingModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10.joblib
+2025-06-15 19:16:41,795 - INFO - Results saved to: results\VotingModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_results.csv
+2025-06-15 19:16:41,796 - INFO - Starting training for StackingModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 19:16:41,880 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 19:16:41,890 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 19:16:41,900 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 19:16:53,860 - INFO - Confucion-matrix img saved: results\StackingModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_confusion_matrix.png
+2025-06-15 19:16:53,883 - INFO - Training completed for StackingModel
+2025-06-15 19:16:53,883 - INFO - Best parameters: {'cv': 3, 'lr_C': 6.698650194576556, 'gnb_var_smoothing': 2.311487908045923e-09, 'qda_reg_param': 0.1883258196024904, 'rf_n_estimators': 79, 'rf_max_depth': 6, 'rf_min_samples_split': 2, 'rf_min_samples_leaf': 2}
+2025-06-15 19:16:53,884 - INFO - Test metrics: {'accuracy': 0.7016835016835017, 'f1': 0.6990655453498021, 'precision': 0.7015185645928064, 'recall': 0.7016835016835017, 'roc_auc': 0.8504827082230985, 'confusion_matrix': array([[ 82,  98,  37],
+       [ 36, 347, 103],
+       [ 48, 121, 613]])}
+2025-06-15 19:16:53,884 - INFO - Model saved to: models/saved\StackingModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10.joblib
+2025-06-15 19:16:53,884 - INFO - Results saved to: results\StackingModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_results.csv
+2025-06-15 19:25:10,516 - INFO - Training on file: data_generation\data\mfcc\butter\savgol\mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 19:25:10,516 - INFO - Starting training for XGBoostModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 19:25:10,573 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 19:25:10,579 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 19:25:10,586 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 19:25:14,104 - INFO - Confucion-matrix img saved: results\XGBoostModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_confusion_matrix.png
+2025-06-15 19:25:14,116 - INFO - Training completed for XGBoostModel
+2025-06-15 19:25:14,117 - INFO - Best parameters: {'n_estimators': 300, 'max_depth': 7, 'learning_rate': 0.034978607325631725, 'subsample': 0.6029773775507327, 'colsample_bytree': 0.8413099405614355, 'min_child_weight': 6, 'gamma': 3.2245173052444525, 'reg_alpha': 3.257857596828702, 'reg_lambda': 3.366286437579215}
+2025-06-15 19:25:14,117 - INFO - Test metrics: {'accuracy': 0.7198653198653199, 'f1': 0.7152549399357909, 'precision': 0.7158295289722079, 'recall': 0.7198653198653199, 'roc_auc': 0.8590203808727246, 'confusion_matrix': array([[ 84,  82,  51],
+       [ 22, 364, 100],
+       [ 53, 108, 621]])}
+2025-06-15 19:25:14,117 - INFO - Model saved to: models/saved\XGBoostModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10.joblib
+2025-06-15 19:25:14,117 - INFO - Results saved to: results\XGBoostModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_results.csv
+2025-06-15 19:25:14,118 - INFO - Starting training for SVCModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 19:25:14,205 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 19:25:14,214 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 19:25:14,220 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 19:25:29,847 - INFO - Confucion-matrix img saved: results\SVCModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_confusion_matrix.png
+2025-06-15 19:25:29,849 - INFO - Training completed for SVCModel
+2025-06-15 19:25:29,849 - INFO - Best parameters: {'C': 1.0, 'kernel': 'rbf', 'gamma': 'scale', 'class_weight': None}
+2025-06-15 19:25:29,849 - INFO - Test metrics: {'accuracy': 0.7212121212121212, 'f1': 0.7121517082402087, 'precision': 0.7307512885216485, 'recall': 0.7212121212121212, 'roc_auc': 0.8465492242953333, 'confusion_matrix': array([[ 70,  96,  51],
+       [ 13, 379,  94],
+       [ 16, 144, 622]])}
+2025-06-15 19:25:29,849 - INFO - Model saved to: models/saved\SVCModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10.joblib
+2025-06-15 19:25:29,849 - INFO - Results saved to: results\SVCModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_results.csv
+2025-06-15 19:25:29,849 - INFO - Starting training for CatBoostModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 19:25:29,900 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 19:25:29,905 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 19:25:29,912 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 19:25:38,672 - INFO - Confucion-matrix img saved: results\CatBoostModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_confusion_matrix.png
+2025-06-15 19:25:38,675 - INFO - Training completed for CatBoostModel
+2025-06-15 19:25:38,676 - INFO - Best parameters: {'bootstrap_type': 'Bernoulli', 'iterations': 500, 'depth': 6, 'learning_rate': 0.012182462993132631, 'l2_leaf_reg': 0.6810303507633315, 'random_strength': 9.837173858471333, 'od_type': 'Iter', 'od_wait': 20}
+2025-06-15 19:25:38,676 - INFO - Test metrics: {'accuracy': 0.7265993265993266, 'f1': 0.720574689909305, 'precision': 0.7241209720170371, 'recall': 0.7265993265993266, 'roc_auc': 0.8615719154302732, 'confusion_matrix': array([[ 81,  84,  52],
+       [ 19, 374,  93],
+       [ 41, 117, 624]])}
+2025-06-15 19:25:38,676 - INFO - Model saved to: models/saved\CatBoostModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10.joblib
+2025-06-15 19:25:38,676 - INFO - Results saved to: results\CatBoostModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_results.csv
+2025-06-15 19:25:38,677 - INFO - Starting training for RandomForestModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 19:25:38,732 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 19:25:38,738 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 19:25:38,744 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 19:25:53,431 - INFO - Confucion-matrix img saved: results\RandomForestModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_confusion_matrix.png
+2025-06-15 19:25:53,449 - INFO - Training completed for RandomForestModel
+2025-06-15 19:25:53,450 - INFO - Best parameters: {'n_estimators': 100, 'max_depth': 10, 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_features': 'sqrt', 'bootstrap': True, 'criterion': 'gini'}
+2025-06-15 19:25:53,450 - INFO - Test metrics: {'accuracy': 0.7164983164983165, 'f1': 0.7103271984633586, 'precision': 0.7149953243392576, 'recall': 0.7164983164983165, 'roc_auc': 0.8567977911829566, 'confusion_matrix': array([[ 81,  83,  53],
+       [ 19, 361, 106],
+       [ 34, 126, 622]])}
+2025-06-15 19:25:53,450 - INFO - Model saved to: models/saved\RandomForestModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10.joblib
+2025-06-15 19:25:53,450 - INFO - Results saved to: results\RandomForestModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_results.csv
+2025-06-15 19:25:53,451 - INFO - Starting training for LogisticRegressionModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 19:25:53,505 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 19:25:53,511 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 19:25:53,517 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 19:25:54,146 - INFO - Confucion-matrix img saved: results\LogisticRegressionModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_confusion_matrix.png
+2025-06-15 19:25:54,147 - INFO - Training completed for LogisticRegressionModel
+2025-06-15 19:25:54,147 - INFO - Best parameters: {'solver': 'lbfgs', 'penalty': None, 'class_weight': None, 'C': 0.00336412092505927, 'max_iter': 100}
+2025-06-15 19:25:54,147 - INFO - Test metrics: {'accuracy': 0.7191919191919192, 'f1': 0.7168669389837344, 'precision': 0.7220431074877175, 'recall': 0.7191919191919192, 'roc_auc': 0.8620128672520431, 'confusion_matrix': array([[ 85, 105,  27],
+       [ 22, 371,  93],
+       [ 58, 112, 612]])}
+2025-06-15 19:25:54,147 - INFO - Model saved to: models/saved\LogisticRegressionModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10.joblib
+2025-06-15 19:25:54,147 - INFO - Results saved to: results\LogisticRegressionModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_results.csv
+2025-06-15 19:25:54,148 - INFO - Starting training for GaussianNBModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 19:25:54,201 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 19:25:54,207 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 19:25:54,218 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 19:25:54,500 - INFO - Confucion-matrix img saved: results\GaussianNBModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_confusion_matrix.png
+2025-06-15 19:25:54,501 - INFO - Training completed for GaussianNBModel
+2025-06-15 19:25:54,501 - INFO - Best parameters: {'var_smoothing': 1e-09}
+2025-06-15 19:25:54,501 - INFO - Test metrics: {'accuracy': 0.6861952861952862, 'f1': 0.6820238000218072, 'precision': 0.7251044791884333, 'recall': 0.6861952861952862, 'roc_auc': 0.8513268739211268, 'confusion_matrix': array([[ 66, 127,  24],
+       [ 13, 416,  57],
+       [ 31, 214, 537]])}
+2025-06-15 19:25:54,501 - INFO - Model saved to: models/saved\GaussianNBModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10.joblib
+2025-06-15 19:25:54,501 - INFO - Results saved to: results\GaussianNBModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_results.csv
+2025-06-15 19:25:54,502 - INFO - Starting training for QuadraticDiscriminantAnalysisModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 19:25:54,553 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 19:25:54,559 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 19:25:54,564 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 19:25:54,864 - INFO - Confucion-matrix img saved: results\QuadraticDiscriminantAnalysisModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_confusion_matrix.png
+2025-06-15 19:25:54,865 - INFO - Training completed for QuadraticDiscriminantAnalysisModel
+2025-06-15 19:25:54,865 - INFO - Best parameters: {'reg_param': 0.4304863265548665}
+2025-06-15 19:25:54,865 - INFO - Test metrics: {'accuracy': 0.694949494949495, 'f1': 0.6892545796570564, 'precision': 0.74353500854345, 'recall': 0.694949494949495, 'roc_auc': 0.8697648250627261, 'confusion_matrix': array([[ 63, 135,  19],
+       [  4, 423,  59],
+       [ 22, 214, 546]])}
+2025-06-15 19:25:54,865 - INFO - Model saved to: models/saved\QuadraticDiscriminantAnalysisModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10.joblib
+2025-06-15 19:25:54,865 - INFO - Results saved to: results\QuadraticDiscriminantAnalysisModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_results.csv
+2025-06-15 19:25:54,865 - INFO - Starting training for VotingModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 19:25:54,916 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 19:25:54,922 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 19:25:54,927 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 19:25:55,514 - INFO - Confucion-matrix img saved: results\VotingModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_confusion_matrix.png
+2025-06-15 19:25:55,516 - INFO - Training completed for VotingModel
+2025-06-15 19:25:55,516 - INFO - Best parameters: {'voting': 'soft', 'weight_lr': 1.3579392959720749, 'weight_gnb': 0.7162892165272181, 'weight_qda': 0.6225274647807693, 'lr_C': 2.8403049632757966, 'gnb_var_smoothing': 1.440864597825577e-09, 'qda_reg_param': 0.6972404427100473}
+2025-06-15 19:25:55,516 - INFO - Test metrics: {'accuracy': 0.7023569023569024, 'f1': 0.6980345075896195, 'precision': 0.731479656834114, 'recall': 0.7023569023569024, 'roc_auc': 0.866528174691327, 'confusion_matrix': array([[ 69, 126,  22],
+       [ 12, 408,  66],
+       [ 31, 185, 566]])}
+2025-06-15 19:25:55,516 - INFO - Model saved to: models/saved\VotingModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10.joblib
+2025-06-15 19:25:55,516 - INFO - Results saved to: results\VotingModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_results.csv
+2025-06-15 19:25:55,516 - INFO - Starting training for StackingModel on mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1.csv
+2025-06-15 19:25:55,566 - INFO - Loaded dataset with 7515 samples and 52 features
+2025-06-15 19:25:55,573 - INFO - Split data into 635 training files and 159 test files
+2025-06-15 19:25:55,579 - INFO - Selected 10 best features: ['mfcc_5_mean', 'mfcc_7_mean', 'mfcc_8_mean', 'mfcc_7_std', 'mfcc_9_std', 'mfcc_3_min', 'mfcc_5_min', 'mfcc_8_min', 'mfcc_9_min', 'mfcc_7_max']
+2025-06-15 19:26:10,068 - INFO - Confucion-matrix img saved: results\StackingModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_confusion_matrix.png
+2025-06-15 19:26:10,107 - INFO - Training completed for StackingModel
+2025-06-15 19:26:10,107 - INFO - Best parameters: {'cv': 3, 'lr_C': 9.117495677462541, 'gnb_var_smoothing': 1.2323287139253466e-09, 'qda_reg_param': 0.9453668081437087, 'rf_n_estimators': 178, 'rf_max_depth': 9, 'rf_min_samples_split': 8, 'rf_min_samples_leaf': 1}
+2025-06-15 19:26:10,107 - INFO - Test metrics: {'accuracy': 0.7003367003367004, 'f1': 0.6985535477313756, 'precision': 0.7013938444505669, 'recall': 0.7003367003367004, 'roc_auc': 0.8536380886180418, 'confusion_matrix': array([[ 88,  97,  32],
+       [ 34, 341, 111],
+       [ 47, 124, 611]])}
+2025-06-15 19:26:10,108 - INFO - Model saved to: models/saved\StackingModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10.joblib
+2025-06-15 19:26:10,108 - INFO - Results saved to: results\StackingModel_mfcc13_seg512ms_dist400ms_maxseg10_bp1000-8000Hz_order5_peak0.1_prom0.1_kbest-10_results.csv

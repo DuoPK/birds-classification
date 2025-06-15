@@ -1,4 +1,3 @@
-# === main.py ===
 import os
 import numpy as np
 import pandas as pd
@@ -13,7 +12,6 @@ import logging
 import soundfile as sf
 from pathlib import Path
 
-# === LOGGING CONFIGURATION ===
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
@@ -23,9 +21,44 @@ logging.basicConfig(
     ]
 )
 
-# === SAMPLE SAVING CONFIGURATION ===
-SAMPLE_SAVE_DIR = Path("processed_samples")
-SAMPLE_SAVE_DIR.mkdir(exist_ok=True)
+# === PARAMETRY ===
+SELECTED_SPECIES = ["houfin", "comwax", "calqua"]
+BANDPASS_FILTER_TYPE = 'butter'   # 'savgol', 'butter', 'fft', 'wavelet'
+DENOISING_FILTER_TYPE = 'savgol'  # 'savgol', 'wavelet', 'hilbert'
+FEATURE_TYPE = 'mfcc'    # 'mfcc', 'mfe', 'wavelet', 'lpc', 'pca'
+N_MFCC = 13  # Number of MFCC coefficients to extract
+# RESAMPLE_RATE = 20000
+MAX_SEGMENTS_PER_FILE = 10  # Maximum number of segments to process from each file
+SEGMENT_LENGTH_MS = 512  # Length of each segment in milliseconds
+SEGMENT_DISTANCE_MS = 400  # Minimum distance between segments in milliseconds
+BANDPASS_LOW_FREQ = 1000  # Lower cutoff frequency for bandpass filter (Hz)
+BANDPASS_HIGH_FREQ = 8000  # Upper cutoff frequency for bandpass filter (Hz)
+BANDPASS_ORDER = 5  # Order of the Butterworth filter
+PEAK_HEIGHT = 0.1  # Minimum height of peaks (normalized)
+PEAK_PROMINENCE = 0.1  # Minimum prominence of peaks (normalized)
+STANDARDIZE_FEATURES = True  # Whether to standardize features before saving
+
+CSV_SAVE_DIR = Path("data_generation/data") / FEATURE_TYPE / BANDPASS_FILTER_TYPE / DENOISING_FILTER_TYPE
+CSV_SAVE_DIR.mkdir(parents=True, exist_ok=True)
+
+EXPORT_CSV_FILE = (
+    f"features-{FEATURE_TYPE}"
+    f"_bandpass-{BANDPASS_FILTER_TYPE}"
+    f"_denoise-{DENOISING_FILTER_TYPE}"
+    f"{'_mfcc'+str(N_MFCC) if FEATURE_TYPE == 'mfcc' else ''}"
+    f"_seg{SEGMENT_LENGTH_MS}ms"
+    f"_dist{SEGMENT_DISTANCE_MS}ms"
+    f"_maxseg{MAX_SEGMENTS_PER_FILE}"
+    f"_bp{BANDPASS_LOW_FREQ}-{BANDPASS_HIGH_FREQ}Hz"
+    f"{'_order' + str(BANDPASS_ORDER) if BANDPASS_FILTER_TYPE == 'butter' else ''}"
+    f"_peak{PEAK_HEIGHT}"
+    f"_prom{PEAK_PROMINENCE}.csv"
+)
+
+EXPORT_CSV_PATH = CSV_SAVE_DIR / EXPORT_CSV_FILE
+
+SAMPLE_SAVE_DIR = Path("audio/processed_samples")
+SAMPLE_SAVE_DIR.mkdir(parents=True, exist_ok=True)
 
 def save_audio_sample(signal, sr, filename, subdir):
     """Save audio sample to a file."""
@@ -36,24 +69,6 @@ def save_audio_sample(signal, sr, filename, subdir):
         logging.info(f"Saved audio sample to {save_path}")
     except Exception as e:
         logging.error(f"Error saving audio sample {filename} to {subdir}: {e}")
-
-# === PARAMETRY ===
-SELECTED_SPECIES = ["houfin", "comwax", "calqua"]
-BANDPASS_FILTER_TYPE = 'butter'   # 'savgol', 'butter', 'fft', 'wavelet'
-DENOISING_FILTER_TYPE = 'savgol'  # 'savgol', 'wavelet', 'hilbert'
-FEATURE_TYPE = 'mfcc'    # 'mfcc', 'mfe', 'wavelet', 'lpc', 'pca'
-N_MFCC = 13  # Number of MFCC coefficients to extract
-RESAMPLE_RATE = 20000
-EXPORT_CSV_PATH = "filtered_features.csv"
-MAX_SEGMENTS_PER_FILE = 10  # Maximum number of segments to process from each file
-SEGMENT_LENGTH_MS = 512  # Length of each segment in milliseconds
-SEGMENT_DISTANCE_MS = 400  # Minimum distance between segments in milliseconds
-BANDPASS_LOW_FREQ = 1000  # Lower cutoff frequency for bandpass filter (Hz)
-BANDPASS_HIGH_FREQ = 8000  # Upper cutoff frequency for bandpass filter (Hz)
-BANDPASS_ORDER = 5  # Order of the Butterworth filter
-PEAK_HEIGHT = 0.1  # Minimum height of peaks (normalized)
-PEAK_PROMINENCE = 0.1  # Minimum prominence of peaks (normalized)
-STANDARDIZE_FEATURES = True  # Whether to standardize features before saving
 
 # === FILTRY ===
 def butter_filter(data, cutoff, fs, filter_type='high', order=BANDPASS_ORDER):
@@ -131,9 +146,9 @@ def segment_signal(signal, sr, window_size_ms=SEGMENT_LENGTH_MS, distance_ms=SEG
     logging.info(f"Created {len(segments)} valid segments")
     return segments
 
-def extract_mfe(signal, sr, n_mels=40, frame_length=0.025, frame_stride=0.01):
-    # For 512 sample segments, use smaller FFT size
-    n_fft = min(512, len(signal))
+def extract_mfe(signal, sr, n_mels=40, frame_stride=0.01):
+    segment_len = int(sr * SEGMENT_LENGTH_MS / 1000)  # Convert ms to samples
+    n_fft = min(segment_len, len(signal))
     if n_fft % 2 != 0:  # Ensure n_fft is even
         n_fft -= 1
     
@@ -156,10 +171,10 @@ def extract_features(signal, sr, feature_type):
         mfccs = librosa.feature.mfcc(y=signal, sr=sr, n_mfcc=N_MFCC)
         # Calculate statistics for each coefficient across time
         mfcc_stats = np.array([
-            np.mean(mfccs, axis=1),  # mean
-            np.std(mfccs, axis=1),   # standard deviation
-            np.min(mfccs, axis=1),   # minimum
-            np.max(mfccs, axis=1)    # maximum
+            np.mean(mfccs, axis=1),
+            np.std(mfccs, axis=1),
+            np.min(mfccs, axis=1),
+            np.max(mfccs, axis=1)
         ])
         # Flatten the statistics into a single feature vector
         features = mfcc_stats.flatten()
@@ -184,11 +199,11 @@ def export_features_to_csv(filtered_data):
     label_names = filtered_data.features["ebird_code"].names
     processed_species = set()  # Track which species we've already saved samples for
     all_features = []  # Store all features for standardization
-    feature_names = None  # Will store feature names
+    feature_names = None
     
     for example in filtered_data:
         label = label_names[example['ebird_code']]
-        if label not in SELECTED_SPECIES:
+        if SELECTED_SPECIES and label not in SELECTED_SPECIES:
             continue
 
         filepath = example['filepath']
@@ -204,11 +219,11 @@ def export_features_to_csv(filtered_data):
                 # Save original sample
                 save_audio_sample(signal, sr, f"{base_filename}_original.wav", f"{label}/original")
                 
-                # Apply bandpass filter and save
+                # Apply bandpass filter
                 bandpass_signal = apply_bandpass_filter(signal, sr, method=BANDPASS_FILTER_TYPE)
                 save_audio_sample(bandpass_signal, sr, f"{base_filename}_bandpass.wav", f"{label}/bandpass")
 
-                # Apply denoising filter and save
+                # Apply denoising filter
                 filtered_signal = apply_denoising_filter(bandpass_signal, DENOISING_FILTER_TYPE)
                 save_audio_sample(filtered_signal, sr, f"{base_filename}_denoised.wav", f"{label}/denoised")
 
@@ -229,9 +244,9 @@ def export_features_to_csv(filtered_data):
                 filtered_signal = apply_denoising_filter(bandpass_signal, DENOISING_FILTER_TYPE)
                 segments = segment_signal(filtered_signal, sr)
 
-            if RESAMPLE_RATE:
-                bandpass_signal = librosa.resample(bandpass_signal, orig_sr=sr, target_sr=RESAMPLE_RATE)
-                sr = RESAMPLE_RATE
+            # if RESAMPLE_RATE:
+            #     bandpass_signal = librosa.resample(bandpass_signal, orig_sr=sr, target_sr=RESAMPLE_RATE)
+            #     sr = RESAMPLE_RATE
 
             if not segments:
                 logging.warning(f"No segments found in file: {filepath}")
@@ -305,10 +320,6 @@ if __name__ == "__main__":
     from datasets import load_dataset
     # Wczytanie tylko podzbioru 'UHH'
     dataset = load_dataset("DBD-research-group/BirdSet", name="UHH", trust_remote_code=True)
-    from collections import Counter
     train_data = dataset["train"]
-
-    # label_names = train_data.features["ebird_code"].names
-    # species_counts = Counter(example["ebird_code"] for example in train_data)
 
     export_features_to_csv(train_data)

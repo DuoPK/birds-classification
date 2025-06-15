@@ -21,37 +21,12 @@ class LogisticRegressionModel:
         )
 
     def train(self, X, y):
-        """
-        Train the model
-        
-        Args:
-            X (numpy.ndarray): Training features
-            y (numpy.ndarray): Training labels
-        """
         self.model.fit(X, y)
 
     def predict(self, X):
-        """
-        Make predictions
-        
-        Args:
-            X (numpy.ndarray): Features to predict
-            
-        Returns:
-            numpy.ndarray: Predicted labels
-        """
         return self.model.predict(X)
 
     def predict_proba(self, X):
-        """
-        Get probability estimates
-        
-        Args:
-            X (numpy.ndarray): Features to predict probabilities for
-            
-        Returns:
-            numpy.ndarray: Probability estimates
-        """
         return self.model.predict_proba(X)
 
     def get_params(self):
@@ -59,7 +34,7 @@ class LogisticRegressionModel:
 
     def get_optuna_params(self, trial):
         """Get hyperparameters for Optuna optimization"""
-        solver = trial.suggest_categorical('solver', ['lbfgs', 'liblinear', 'newton-cg', 'sag', 'saga'])
+        solver = trial.suggest_categorical('solver', ['lbfgs', 'newton-cg', 'sag', 'saga'])
         penalty = trial.suggest_categorical('penalty', ['l1', 'l2', 'elasticnet', None])
         class_weight = trial.suggest_categorical('class_weight', [None, 'balanced'])
         C = trial.suggest_float('C', 1e-3, 1e2, log=True)
@@ -69,7 +44,6 @@ class LogisticRegressionModel:
         valid_combinations = {
             'lbfgs': ['l2', None],
             'newton-cg': ['l2', None],
-            'liblinear': ['l1', 'l2'],
             'sag': ['l2', None],
             'saga': ['l1', 'l2', 'elasticnet', None],
         }

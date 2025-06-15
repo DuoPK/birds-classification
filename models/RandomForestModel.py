@@ -1,6 +1,6 @@
 from sklearn.ensemble import RandomForestClassifier
-from utils.ClassificationMetrics import ClassificationMetrics
 from utils.config import RANDOM_STATE
+
 
 class RandomForestModel:
     def __init__(self, **kwargs):
@@ -17,10 +17,10 @@ class RandomForestModel:
     def predict_proba(self, X_test):
         return self.model.predict_proba(X_test)
 
-    def evaluate(self, X_test, y_test, positive_label=1):
-        y_pred = self.predict(X_test)
-        metrics = ClassificationMetrics(y_test, y_pred, positive_label=positive_label)
-        return metrics.summary()
+    # def evaluate(self, X_test, y_test, positive_label=1):
+    #     y_pred = self.predict(X_test)
+    #     metrics = ClassificationMetrics(y_test, y_pred, positive_label=positive_label)
+    #     return metrics.summary()
 
     def get_params(self):
         return self.model.get_params()

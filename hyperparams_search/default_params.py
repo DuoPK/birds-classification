@@ -1,16 +1,6 @@
-def get_default_params(model_name, input_size=None, output_size=None):
+def get_default_params(model_name):
     """Get default parameters for the model"""
-    if model_name == 'NeuralNetworkModel':
-        return {
-            'input_size': input_size,
-            'output_size': output_size,
-            'hidden_sizes': [64, 32],
-            'learning_rate': 0.001,
-            'batch_size': 32,
-            'epochs': 100,
-            'dropout_rate': 0.2
-        }
-    elif model_name == 'SVCModel':
+    if model_name == 'SVCModel':
         return {'C': 1.0, 'kernel': 'rbf', 'gamma': 'scale'}
     elif model_name == 'CatBoostModel':
         return {'iterations': 100, 'learning_rate': 0.1, 'depth': 6, 'l2_leaf_reg': 3}

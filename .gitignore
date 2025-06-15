@@ -4,3 +4,9 @@
 __pycache__/
 *.py[codz]
 *$py.class
+
+*.log
+*.joblib
+*.csv
+*.png
+catboost_info/
